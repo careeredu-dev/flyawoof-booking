@@ -1,160 +1,131 @@
+// app/page.tsx
 "use client";
-
-import { useState } from "react";
 import Image from "next/image";
-import { FaBars } from "react-icons/fa";
-import "keen-slider/keen-slider.min.css";
-import { useKeenSlider } from "keen-slider/react";
+import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const [sliderRef] = useKeenSlider<HTMLDivElement>({
-    loop: true,
-    slides: { perView: 3, spacing: 15 },
-    breakpoints: {
-      "(max-width: 768px)": {
-        slides: { perView: 1 },
-      },
-    },
-  });
-
   return (
-    <div className="bg-gray-50">
-      {/* Navbar */}
-      <nav className="flex items-center justify-between p-4 bg-white shadow-md fixed w-full z-10">
-        <div className="flex items-center space-x-2">
-          <Image
-            src="/logo.png"
-            alt="Flyawoof Logo"
-            width={140}
-            height={40}
-          />
-        </div>
-        <div className="hidden md:flex space-x-6 font-semibold text-gray-900">
-          <a href="#home" className="hover:text-blue-600">Home</a>
-          <a href="#book" className="hover:text-blue-600">Book a Flight</a>
-          <a href="#reviews" className="hover:text-blue-600">Reviews</a>
-          <a href="#continents" className="hover:text-blue-600">Continents</a>
-          <a href="#app" className="hover:text-blue-600">Get Our Mobile App</a>
-          <a
-            href="https://wa.link/vdw17y"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-          >
-            Contact Us
-          </a>
-        </div>
-        <div className="md:hidden">
-          <button onClick={() => setMenuOpen(!menuOpen)}>
-            <FaBars size={24} />
-          </button>
-        </div>
-      </nav>
+    <main className="min-h-screen bg-white text-gray-800">
+      {/* Header */}
+      <header className="flex items-center justify-between p-4 shadow-md sticky top-0 bg-white z-50 h-16 sm:h-20">
+        <Link href="/" className="flex items-center">
+          <Image src="/logo.png" alt="Flyawoof Logo" width={120} height={30} />
+        </Link>
+        <nav className="hidden md:flex space-x-6 text-sm font-medium">
+          <a href="#home" className="hover:text-[#00AEEF]">Home</a>
+          <a href="#book" className="hover:text-[#00AEEF]">Book a Flight</a>
+          <a href="#reviews" className="hover:text-[#00AEEF]">Reviews</a>
+          <a href="#continents" className="hover:text-[#00AEEF]">Continents</a>
+          <a href="#app" className="hover:text-[#00AEEF]">Get Our Mobile App</a>
+        </nav>
+        <Link
+          href="https://wa.link/vdw17y"
+          className="hidden md:inline-block bg-[#00AEEF] text-white px-4 py-2 rounded hover:bg-[#0096c5] transition"
+        >
+          Contact Us
+        </Link>
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden focus:outline-none text-[#00AEEF]"
+        >
+          ☰
+        </button>
+        {menuOpen && (
+          <div className="absolute top-16 left-0 w-full bg-white flex flex-col items-center space-y-4 py-4 shadow-md">
+            <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
+            <a href="#book" onClick={() => setMenuOpen(false)}>Book a Flight</a>
+            <a href="#reviews" onClick={() => setMenuOpen(false)}>Reviews</a>
+            <a href="#continents" onClick={() => setMenuOpen(false)}>Continents</a>
+            <a href="#app" onClick={() => setMenuOpen(false)}>Get Our Mobile App</a>
+            <Link
+              href="https://wa.link/vdw17y"
+              className="bg-[#00AEEF] text-white px-4 py-2 rounded hover:bg-[#0096c5] transition"
+            >
+              Contact Us
+            </Link>
+          </div>
+        )}
+      </header>
 
-      {menuOpen && (
-        <div className="md:hidden bg-white p-4 space-y-4 mt-16 font-semibold text-gray-900">
-          <a href="#home" className="block hover:text-blue-600">Home</a>
-          <a href="#book" className="block hover:text-blue-600">Book a Flight</a>
-          <a href="#reviews" className="block hover:text-blue-600">Reviews</a>
-          <a href="#continents" className="block hover:text-blue-600">Continents</a>
-          <a href="#app" className="block hover:text-blue-600">Get Our Mobile App</a>
-          <a
-            href="https://wa.link/vdw17y"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-          >
-            Contact Us
-          </a>
-        </div>
-      )}
-
-      {/* Hero Section */}
-      <section id="home" className="relative h-screen flex items-center justify-center bg-black">
-        <Image
-          src="/plane-bg.png"
-          alt="Where to Fly"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-50"
+      {/* Hero Section with Video */}
+      <section id="home" className="relative w-full h-[500px]">
+        <video
+          src="/video.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <h1 className="text-5xl md:text-7xl font-bold text-white z-10">Where to Fly? 🌍✈️</h1>
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <h1 className="text-white text-4xl sm:text-5xl font-bold text-center">Where to Fly? 🌍✈️</h1>
+        </div>
       </section>
 
-      {/* Book a Flight Section */}
-      <section id="book" className="py-20 text-center bg-white">
-        <h2 className="text-4xl font-extrabold text-blue-600 mb-3">Book Your Flight Easily</h2>
-        <div className="h-1 w-24 bg-blue-600 mx-auto mb-6 rounded"></div>
+      {/* Book a Flight Section with iframe */}
+      <section id="book" className="py-16 bg-white text-center px-4">
+        <h2 className="text-3xl font-bold text-[#00AEEF] mb-6">Book Your Flight Easily</h2>
         <iframe
           src="https://www.travelstart.com.ng"
-          className="w-full h-[600px] border-none"
+          className="w-full min-h-[600px] border-none overflow-hidden"
         ></iframe>
       </section>
 
-      {/* Reviews Section */}
-      <section id="reviews" className="py-20 bg-gray-50 text-center">
-        <h2 className="text-4xl font-extrabold text-blue-600 mb-3">Traveler Reviews</h2>
-        <div className="h-1 w-24 bg-blue-600 mx-auto mb-8 rounded"></div>
-        <div className="flex flex-wrap justify-center gap-6">
-          <div className="bg-white p-6 rounded shadow w-72">
-            <p className="italic text-gray-800">"Flyawoof made my trip to Europe seamless and so affordable!"</p>
-            <p className="mt-4 font-bold text-gray-900">Jane A.</p>
+      {/* Reviews */}
+      <section id="reviews" className="py-16 bg-gray-50 text-center px-4">
+        <h2 className="text-3xl font-bold text-[#00AEEF] mb-10">Traveler Reviews</h2>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 max-w-4xl mx-auto">
+          <div className="bg-white shadow p-6 rounded-md w-full md:w-1/3">
+            <p>"Flyawoof made my trip to Europe seamless and so affordable!"</p>
+            <p className="mt-4 font-semibold text-gray-600">- Jane A.</p>
           </div>
-          <div className="bg-white p-6 rounded shadow w-72">
-            <p className="italic text-gray-800">"Best booking experience ever. Highly recommend to all travelers!"</p>
-            <p className="mt-4 font-bold text-gray-900">Michael B.</p>
+          <div className="bg-white shadow p-6 rounded-md w-full md:w-1/3">
+            <p>"Best booking experience ever. Highly recommend to all travelers!"</p>
+            <p className="mt-4 font-semibold text-gray-600">- Michael B.</p>
           </div>
-          <div className="bg-white p-6 rounded shadow w-72">
-            <p className="italic text-gray-800">"Amazing deals to Africa, and super easy to use."</p>
-            <p className="mt-4 font-bold text-gray-900">Aisha C.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Continents Section */}
-      <section id="continents" className="py-20 bg-white text-center">
-        <h2 className="text-4xl font-extrabold text-blue-600 mb-3">Continents We Cover</h2>
-        <div className="h-1 w-24 bg-blue-600 mx-auto mb-8 rounded"></div>
-        <div ref={sliderRef} className="keen-slider px-4">
-          <div className="keen-slider__slide">
-            <Image src="/africa.jpg" alt="Africa" width={300} height={200} className="rounded" />
-            <p className="mt-2 font-semibold text-gray-900">Africa</p>
-          </div>
-          <div className="keen-slider__slide">
-            <Image src="/europe.jpg" alt="Europe" width={300} height={200} className="rounded" />
-            <p className="mt-2 font-semibold text-gray-900">Europe</p>
-          </div>
-          <div className="keen-slider__slide">
-            <Image src="/asia.jpg" alt="Asia" width={300} height={200} className="rounded" />
-            <p className="mt-2 font-semibold text-gray-900">Asia</p>
-          </div>
-          <div className="keen-slider__slide">
-            <Image src="/north-america.jpg" alt="North America" width={300} height={200} className="rounded" />
-            <p className="mt-2 font-semibold text-gray-900">North America</p>
-          </div>
-          <div className="keen-slider__slide">
-            <Image src="/south-america.jpg" alt="South America" width={300} height={200} className="rounded" />
-            <p className="mt-2 font-semibold text-gray-900">South America</p>
-          </div>
-          <div className="keen-slider__slide">
-            <Image src="/australia.jpg" alt="Australia" width={300} height={200} className="rounded" />
-            <p className="mt-2 font-semibold text-gray-900">Australia</p>
+          <div className="bg-white shadow p-6 rounded-md w-full md:w-1/3">
+            <p>"Amazing deals to Africa, and super easy to use."</p>
+            <p className="mt-4 font-semibold text-gray-600">- Aisha C.</p>
           </div>
         </div>
       </section>
 
-      {/* App Download Section */}
-      <section id="app" className="py-20 text-center bg-gray-50">
-        <h2 className="text-4xl font-extrabold text-blue-600 mb-3">Download Our Mobile App</h2>
-        <div className="h-1 w-24 bg-blue-600 mx-auto mb-6 rounded"></div>
-        <p className="mb-6 text-gray-800">Book flights on the go, get exclusive deals & more!</p>
-        <div className="flex justify-center gap-4">
+      {/* Continents */}
+      <section id="continents" className="py-16 bg-white text-center px-4">
+        <h2 className="text-3xl font-bold text-[#00AEEF] mb-10">Continents We Cover</h2>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 max-w-4xl mx-auto">
+          <div className="flex flex-col items-center">
+            <Image src="/africa.png" alt="Africa" width={100} height={100} />
+            <p className="mt-2 font-medium">Africa</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <Image src="/europe.png" alt="Europe" width={100} height={100} />
+            <p className="mt-2 font-medium">Europe</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <Image src="/asia.png" alt="Asia" width={100} height={100} />
+            <p className="mt-2 font-medium">Asia</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile App */}
+      <section id="app" className="py-16 bg-gray-50 text-center px-4">
+        <h2 className="text-3xl font-bold text-[#00AEEF] mb-4">Download Our Mobile App</h2>
+        <p className="mb-6">Book flights on the go, get exclusive deals & more!</p>
+        <div className="flex justify-center items-center gap-4">
           <Image src="/google-play.png" alt="Google Play" width={150} height={50} />
           <Image src="/app-store.png" alt="App Store" width={150} height={50} />
         </div>
       </section>
-    </div>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-6 text-center">
+        &copy; {new Date().getFullYear()} Flyawoof. All rights reserved.
+      </footer>
+    </main>
   );
 }
