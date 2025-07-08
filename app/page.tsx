@@ -142,9 +142,10 @@ export default function Home() {
           </div>
         </section>
         {/* 
+  {/* 
   ===============================
   💸 Exciting Offers Section Start
-  Now with full details & buttons
+  Now with full details & animated buttons
   ===============================
 */}
 <section id="offers" className="bg-white py-12 px-4 sm:px-6 lg:px-8">
@@ -159,57 +160,77 @@ export default function Home() {
 
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
     {/* 🌆 London */}
-    <div className="bg-[#E6FFF8] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300 flex flex-col justify-between">
+    <div className="bg-[#D0F4F4] border border-[#00AEEF1A] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300 flex flex-col justify-between">
       <Image src="/london.jpg" alt="London" width={400} height={250} className="rounded-lg mb-4" />
       <div>
         <h3 className="text-lg font-semibold text-[#003C3C]">Lagos → London</h3>
         <p className="text-sm text-[#005f5f] mb-1">British Airways • Economy</p>
         <p className="text-sm text-[#003C3C] font-medium mb-1">From NGN 450,000</p>
         <p className="text-xs text-gray-500 mb-3">Valid till Aug 30</p>
-        <button className="bg-[#00AEEF] text-white w-full py-2 rounded hover:bg-[#008CC2] transition-all">
-          Book Now
+        <button
+          onClick={handleBookClick}
+          className="bg-[#00AEEF] text-white w-full py-2 rounded hover:bg-[#008CC2] transition-all font-medium text-sm"
+        >
+          <span className="inline-flex items-center justify-center gap-2">
+            Book Now <span className="animate-swing">✈️</span>
+          </span>
         </button>
       </div>
     </div>
 
     {/* 🗽 New York */}
-    <div className="bg-[#E6FFF8] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300 flex flex-col justify-between">
+    <div className="bg-[#D0F4F4] border border-[#00AEEF1A] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300 flex flex-col justify-between">
       <Image src="/usa.jpg" alt="New York" width={400} height={250} className="rounded-lg mb-4" />
       <div>
         <h3 className="text-lg font-semibold text-[#003C3C]">Lagos → New York</h3>
         <p className="text-sm text-[#005f5f] mb-1">Delta Airlines • Economy</p>
         <p className="text-sm text-[#003C3C] font-medium mb-1">From NGN 600,000</p>
         <p className="text-xs text-gray-500 mb-3">Valid till Sept 10</p>
-        <button className="bg-[#00AEEF] text-white w-full py-2 rounded hover:bg-[#008CC2] transition-all">
-          Book Now
+        <button
+          onClick={handleBookClick}
+          className="bg-[#00AEEF] text-white w-full py-2 rounded hover:bg-[#008CC2] transition-all font-medium text-sm"
+        >
+          <span className="inline-flex items-center justify-center gap-2">
+            Book Now <span className="animate-swing">✈️</span>
+          </span>
         </button>
       </div>
     </div>
 
     {/* 🕌 Dubai */}
-    <div className="bg-[#E6FFF8] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300 flex flex-col justify-between">
+    <div className="bg-[#D0F4F4] border border-[#00AEEF1A] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300 flex flex-col justify-between">
       <Image src="/dubai.jpg" alt="Dubai" width={400} height={250} className="rounded-lg mb-4" />
       <div>
         <h3 className="text-lg font-semibold text-[#003C3C]">Lagos → Dubai</h3>
         <p className="text-sm text-[#005f5f] mb-1">Emirates • Economy</p>
         <p className="text-sm text-[#003C3C] font-medium mb-1">From NGN 300,000</p>
         <p className="text-xs text-gray-500 mb-3">Valid till Sept 5</p>
-        <button className="bg-[#00AEEF] text-white w-full py-2 rounded hover:bg-[#008CC2] transition-all">
-          Book Now
+        <button
+          onClick={handleBookClick}
+          className="bg-[#00AEEF] text-white w-full py-2 rounded hover:bg-[#008CC2] transition-all font-medium text-sm"
+        >
+          <span className="inline-flex items-center justify-center gap-2">
+            Book Now <span className="animate-swing">✈️</span>
+          </span>
         </button>
       </div>
     </div>
 
     {/* 🗼 Paris */}
-    <div className="bg-[#E6FFF8] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300 flex flex-col justify-between">
+    <div className="bg-[#D0F4F4] border border-[#00AEEF1A] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300 flex flex-col justify-between">
       <Image src="/paris.jpg" alt="Paris" width={400} height={250} className="rounded-lg mb-4" />
       <div>
         <h3 className="text-lg font-semibold text-[#003C3C]">Lagos → Paris</h3>
         <p className="text-sm text-[#005f5f] mb-1">Air France • Economy</p>
         <p className="text-sm text-[#003C3C] font-medium mb-1">From NGN 520,000</p>
         <p className="text-xs text-gray-500 mb-3">Valid till Aug 25</p>
-        <button className="bg-[#00AEEF] text-white w-full py-2 rounded hover:bg-[#008CC2] transition-all">
-          Book Now
+        <button
+          onClick={handleBookClick}
+          className="bg-[#00AEEF] text-white w-full py-2 rounded hover:bg-[#008CC2] transition-all font-medium text-sm"
+        >
+          <span className="inline-flex items-center justify-center gap-2">
+            Book Now <span className="animate-swing">✈️</span>
+          </span>
         </button>
       </div>
     </div>
@@ -221,58 +242,3 @@ export default function Home() {
     </>
   );
 }
-
-
-
-
-
-
-
-
-{/* 
-  ===============================
-  💸 Exciting Offers Section Start
-  Edit or replace this block anytime
-  ===============================
-*/}
-<section id="offers" className="bg-white py-12 px-4 sm:px-6 lg:px-8">
-  <div className="max-w-7xl mx-auto text-center mb-10">
-    <h2 className="text-3xl sm:text-4xl font-bold text-[#003C3C]">
-      Exciting Flight Offers
-    </h2>
-    <p className="mt-2 text-base sm:text-lg text-[#005f5f]">
-      Limited deals to top destinations, just for you.
-    </p>
-  </div>
-
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-    {/* 🌆 London */}
-    <div className="bg-[#E6FFF8] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300">
-      <Image src="/london.jpg" alt="London" width={400} height={250} className="rounded-lg mb-4" />
-      <h3 className="text-lg font-semibold text-[#003C3C]">London</h3>
-      <p className="text-[#005f5f] text-sm">From NGN 450,000 • British Airways</p>
-    </div>
-
-    {/* 🗽 New York */}
-    <div className="bg-[#E6FFF8] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300">
-      <Image src="/usa.jpg" alt="New York" width={400} height={250} className="rounded-lg mb-4" />
-      <h3 className="text-lg font-semibold text-[#003C3C]">New York</h3>
-      <p className="text-[#005f5f] text-sm">From NGN 600,000 • Delta Airlines</p>
-    </div>
-
-    {/* 🕌 Dubai */}
-    <div className="bg-[#E6FFF8] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300">
-      <Image src="/dubai.jpg" alt="Dubai" width={400} height={250} className="rounded-lg mb-4" />
-      <h3 className="text-lg font-semibold text-[#003C3C]">Dubai</h3>
-      <p className="text-[#005f5f] text-sm">From NGN 300,000 • Emirates</p>
-    </div>
-
-    {/* 🗼 Paris */}
-    <div className="bg-[#E6FFF8] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300">
-      <Image src="/paris.jpg" alt="Paris" width={400} height={250} className="rounded-lg mb-4" />
-      <h3 className="text-lg font-semibold text-[#003C3C]">Paris</h3>
-      <p className="text-[#005f5f] text-sm">From NGN 520,000 • Air France</p>
-    </div>
-  </div>
-</section>
-{/* ===== End of Exciting Offers Section ===== */}
