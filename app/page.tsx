@@ -1,27 +1,62 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect } from "react";
+import Header from "@/components/Header";
 
 export default function Home() {
   const [showIframe, setShowIframe] = useState(false);
   const [iframeLoaded, setIframeLoaded] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showCurrencyModal, setShowCurrencyModal] = useState(false);
+  const [selectedCurrency, setSelectedCurrency] = useState("NGN");
 
   useEffect(() => {
     if (showIframe) setIframeLoaded(false);
   }, [showIframe]);
 
+  const handleBookClick = () => {
+    setShowCurrencyModal(true);
+  };
+
+  const handleCurrencySelect = (currency: string) => {
+    setSelectedCurrency(currency);
+    setShowCurrencyModal(false);
+    setShowIframe(true);
+  };
+
   return (
     <>
-      {/* Booking Modal */}
+      {/* 💵 Currency Selector Modal */}
+      {showCurrencyModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+          <div className="bg-white rounded-xl p-6 shadow-lg w-[90%] max-w-sm text-center">
+            <h2 className="text-xl font-semibold mb-4 text-[#003C3C]">
+              Choose Your Preferred Currency
+            </h2>
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={() => handleCurrencySelect("NGN")}
+                className="bg-[#00AEEF] text-white px-4 py-2 rounded hover:bg-[#008CC2]"
+              >
+                NGN
+              </button>
+              <button
+                onClick={() => handleCurrencySelect("USD")}
+                className="bg-[#00AEEF] text-white px-4 py-2 rounded hover:bg-[#008CC2]"
+              >
+                USD
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 🪟 Booking Iframe Modal */}
       {showIframe && (
         <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">
           <div className="bg-white rounded-lg shadow-xl w-[95%] max-w-[1080px] max-h-[90vh] relative overflow-hidden">
             <button
               onClick={() => setShowIframe(false)}
               className="absolute top-3 right-4 text-gray-600 hover:text-red-500 text-2xl font-bold z-10"
-              aria-label="Close"
             >
               &times;
             </button>
@@ -43,144 +78,64 @@ export default function Home() {
         </div>
       )}
 
-      <main className="min-h-screen bg-white text-gray-800 font-sans scroll-smooth">
-        {/* Header */}
-        <header className="relative bg-white shadow-md z-50">
-          <div className="flex items-center justify-between px-6 py-4 h-16 sm:h-20">
-            <Link href="/" className="flex items-center">
-              <Image src="/logo.png" alt="Flyawoof Logo" width={160} height={40} priority />
-            </Link>
+      {/* 🌍 Page Content */}
+      <main className="min-h-screen bg-white font-sans scroll-smooth text-[#003C3C]">
+        <Header />
 
-            {/* Desktop Nav */}
-            <nav className="hidden md:flex space-x-6 text-base font-medium">
-              <a href="/" className="hover:text-[#00AEEF] transition-all">Home</a>
-              <a href="#reviews" className="hover:text-[#00AEEF] transition-all">Reviews</a>
-              <a href="#continents" className="hover:text-[#00AEEF] transition-all">Continents</a>
-              <a href="#app" className="hover:text-[#00AEEF] transition-all">Get Our App</a>
-            </nav>
-
-            <Link
-              href="https://wa.link/vdw17y"
-              className="hidden md:inline-block bg-gradient-to-r from-[#00AEEF] to-[#0096c5] text-white px-6 py-2 rounded-full shadow hover:scale-105 transition-all duration-300"
+        {/* 🍃 Hero Section (Text Left, Image Right) */}
+        <section className="w-full relative bg-[#E6FFF8] overflow-hidden">
+          {/* Decorative SVG Wave */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+            <svg
+              className="w-full h-full"
+              viewBox="0 0 1440 320"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              Contact Us
-            </Link>
-
-            {/* Mobile Menu Icon */}
-            <div
-              className="md:hidden text-[#00AEEF] text-3xl font-bold cursor-pointer"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              ☰
-            </div>
-          </div>
-
-          {/* Mobile Menu Dropdown */}
-          {mobileMenuOpen && (
-            <div className="md:hidden bg-white shadow-md">
-              <nav className="flex flex-col px-6 py-4 space-y-4 text-[#00AEEF] font-medium text-base">
-                {[
-                  { label: "Home", href: "/" },
-                  { label: "Reviews", href: "#reviews" },
-                  { label: "Continents", href: "#continents" },
-                  { label: "Get Our App", href: "#app" },
-                ].map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="hover:underline"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </nav>
-            </div>
-          )}
-        </header>
-
-        {/* Hero with Video Background */}
-        <section className="relative w-full h-screen overflow-hidden bg-black">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute top-0 left-0 w-full h-full object-cover"
-          >
-            <source src="/video.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-100 bg-black bg-opacity-80 z-10 pointer-events-none" />
-          <div className="relative z-20 flex flex-col items-center justify-center h-full text-center text-white px-4">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">Explore the World with Flyawoof</h1>
-            <p className="text-lg sm:text-xl mb-8">Find flights, discover destinations, and travel smarter.</p>
-            <button
-              onClick={() => setShowIframe(true)}
-              className="bg-white text-[#00AEEF] px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:scale-105 transition-transform duration-300"
-            >
-              Book a Flight
-            </button>
-          </div>
-        </section>
-
-        {/* Traveler Reviews */}
-        <section id="reviews" className="py-20 bg-gray-50 px-4">
-          <h2 className="text-3xl font-bold text-[#00AEEF] text-center mb-10">Traveler Reviews</h2>
-          <div className="flex flex-col md:flex-row items-center max-w-6xl mx-auto gap-10">
-            <div className="w-full md:w-1/2">
-              <Image
-                src="/travel.png"
-                alt="Happy traveler"
-                width={800}
-                height={500}
-                className="w-full h-auto md:rounded-lg md:shadow-lg object-cover"
+              <path
+                fill="#003C3C"
+                fillOpacity="0.03"
+                d="M0,192L48,186.7C96,181,192,171,288,154.7C384,139,480,117,576,122.7C672,128,768,160,864,186.7C960,213,1056,235,1152,224C1248,213,1344,171,1392,149.3L1440,128L1440,320L0,320Z"
               />
+            </svg>
+          </div>
+
+          {/* Hero Content */}
+          <div className="relative z-10 px-4 py-16 sm:py-24">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+              {/* 🌍 Text Left */}
+              <div className="w-full md:w-1/2 text-center md:text-left">
+                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-4 animate-fadeUp">
+                  Explore the World with Flyawoof
+                </h1>
+                <p className="text-lg sm:text-xl text-[#005f5f] mb-8 animate-fadeUp">
+                  Book smarter. Travel lighter. Discover easier.
+                </p>
+                <button
+                  onClick={handleBookClick}
+                  className="group relative bg-white border border-[#00AEEF] text-[#00AEEF] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#00AEEF] hover:text-white transition-all animate-glow"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    Book a Flight
+                    <span className="animate-swing">✈️</span>
+                  </span>
+                </button>
+              </div>
+
+              {/* ✈️ Image Right */}
+              <div className="w-full md:w-1/2 flex justify-center">
+                <Image
+                  src="/airplane.png"
+                  alt="Airplane"
+                  width={500}
+                  height={400}
+                  className="w-full h-auto max-w-sm sm:max-w-md md:max-w-full animate-float"
+                  priority
+                />
+              </div>
             </div>
-            <div className="w-full md:w-1/2 flex flex-col gap-6">
-              {[
-                { text: "Flyawoof made my trip seamless!", author: "Jane A." },
-                { text: "Highly recommend to all travelers!", author: "Michael B." },
-                { text: "Amazing deals and super easy to use.", author: "Aisha C." },
-              ].map((r, i) => (
-                <div key={i} className="bg-white shadow-xl p-6 rounded-lg hover:scale-105 transition-transform">
-                  <p>{`"${r.text}"`}</p>
-                  <p className="mt-4 font-semibold text-gray-600">{`- ${r.author}`}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
-
-        {/* Continents Section */}
-        <section id="continents" className="relative w-full bg-black overflow-hidden">
-          <div className="absolute inset-0 w-full h-full flex items-center justify-center">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-auto h-full max-w-none object-contain sm:object-cover sm:h-screen"
-            >
-              <source src="/continent.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div className="h-[30vh] sm:h-screen" />
-        </section>
-
-        {/* App Download */}
-        <section id="app" className="py-20 bg-gray-50 text-center px-4">
-          <h2 className="text-3xl font-bold text-[#00AEEF] mb-4">Download Our App</h2>
-          <p className="mb-6 text-gray-600">Book on the go. Get exclusive deals & more!</p>
-          <div className="flex justify-center items-center gap-6">
-            <Image src="/google-play.png" alt="Google Play" width={160} height={50} />
-            <Image src="/app-store.png" alt="App Store" width={160} height={50} />
-          </div>
-        </section>
-
-        {/* Footer */}
-        <footer className="bg-gray-900 text-white py-6 text-center">
-          &copy; {new Date().getFullYear()} Flyawoof. All rights reserved.
-        </footer>
       </main>
     </>
   );

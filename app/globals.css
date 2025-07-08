@@ -48,23 +48,59 @@ body {
 .animate-fadeIn {
   animation: fadeIn 2s ease forwards;
 }
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
 }
-.animate-spin {
-  animation: spin 1s linear infinite;
+.animate-float {
+  animation: float 4s ease-in-out infinite;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
-.animate-pulse {
-  animation: pulse 1.5s ease-in-out infinite;
+.animate-fadeUp {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 rgba(255,255,255,0.3); }
+  50% { box-shadow: 0 0 10px rgba(255,255,255,0.8); }
+}
+.animate-glow {
+  animation: pulseGlow 2s infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes fadeUpCard {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-cardUp {
+  animation: fadeUpCard 0.8s ease-out forwards;
+}
+
+@keyframes swingPlane {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(12deg); }
+}
+.animate-swing {
+  display: inline-block;
+  animation: swingPlane 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 rgba(0,174,239,0.3); }
+  50% { box-shadow: 0 0 10px rgba(0,174,239,0.7); }
+}
+.animate-glow {
+  animation: pulseGlow 2s infinite;
 }
