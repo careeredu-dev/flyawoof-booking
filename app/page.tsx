@@ -1,42 +1,61 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function Home() {
+  const keywords = [
+    "Book a flight",
+    "Travel now",
+    "Available flight",
+    "Quick booking",
+    "Nice places",
+    "Travel abroad",
+  ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
   const [showSite, setShowSite] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % keywords.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [keywords.length]);
 
   return (
     <main className="min-h-screen bg-white text-gray-800 font-sans scroll-smooth">
-      {/* 🎬 Launch Screen */}
       {!showSite && (
         <section className="relative w-full h-screen bg-black overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center w-full h-full">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-auto h-full max-w-none object-contain sm:object-cover"
-            >
-              <source src="/video.mp4" type="video/mp4" />
-            </video>
-          </div>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          >
+            <source src="/video.mp4" type="video/mp4" />
+          </video>
+
           <div className="absolute inset-110 bg-black bg-opacity-40 z-10 pointer-events-none" />
-          <div className="relative z-20 flex flex-col items-center justify-center h-full text-white text-center px-4">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">Welcome to Flyawoof</h1>
-            <p className="text-lg sm:text-xl mb-8">Your destination is just a click away</p>
+
+          <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-white text-center px-4">
+            <div className="h-32 w-full max-w-[90vw] sm:max-w-[700px] mb-8">
+              <p className="text-4xl sm:text-6xl font-extrabold animate-fadeWords">
+                {keywords[activeIndex]}
+              </p>
+            </div>
+
             <button
               onClick={() => setShowSite(true)}
-              className="bg-gradient-to-r from-[#00AEEF] to-[#0096c5] text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300"
+              className="bg-gradient-to-r from-[#00AEEF] to-[#0096c5] text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform duration-300 text-lg sm:text-xl"
             >
-              Enter Site
+              Book a Flight
             </button>
           </div>
         </section>
       )}
 
-      {/* 🌐 Main Site Content */}
       {showSite && (
         <>
           {/* Header */}
@@ -58,7 +77,7 @@ export default function Home() {
             </Link>
           </header>
 
-          {/* ✈️ Booking Section */}
+          {/* Book Section */}
           <section id="book" className="pt-16 pb-0 bg-white text-center px-4">
             <h2 className="text-3xl font-bold text-[#00AEEF] mb-6">Book Your Flight</h2>
             <iframe
@@ -67,7 +86,7 @@ export default function Home() {
             ></iframe>
           </section>
 
-          {/* 💬 Reviews */}
+          {/* Reviews */}
           <section id="reviews" className="py-20 bg-gray-50 text-center px-4">
             <h2 className="text-3xl font-bold text-[#00AEEF] mb-10">Traveler Reviews</h2>
             <div className="flex flex-col md:flex-row justify-center items-center gap-8 max-w-6xl mx-auto">
@@ -84,7 +103,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* 🌍 Continents Section (Responsive Video) */}
+          {/* Continents Video */}
           <section id="continents" className="relative w-full bg-black overflow-hidden">
             <div className="absolute inset-0 w-full h-full flex items-center justify-center">
               <video
@@ -97,11 +116,10 @@ export default function Home() {
                 <source src="/continent.mp4" type="video/mp4" />
               </video>
             </div>
-            {/* This div ensures proper height on mobile */}
-            <div className="h-[30vh] sm:h-screen" />
+            <div className="h-[60vh] sm:h-screen" />
           </section>
 
-          {/* 📱 App Download */}
+          {/* App Download */}
           <section id="app" className="py-20 bg-gray-50 text-center px-4">
             <h2 className="text-3xl font-bold text-[#00AEEF] mb-4">Download Our App</h2>
             <p className="mb-6 text-gray-600">Book on the go. Get exclusive deals & more!</p>
