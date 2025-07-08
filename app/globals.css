@@ -104,3 +104,10 @@ body {
 .animate-glow {
   animation: pulseGlow 2s infinite;
 }
+@keyframes cloudFloat {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100vw); }
+}
+.animate-cloudFloat {
+  animation: cloudFloat 60s linear infinite;
+}
