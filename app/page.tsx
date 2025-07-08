@@ -10,16 +10,18 @@ export default function Home() {
     <main className="min-h-screen bg-white text-gray-800 font-sans scroll-smooth">
       {/* 🎬 Launch Screen */}
       {!showSite && (
-        <section className="relative w-full h-screen overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/video.mp4" type="video/mp4" />
-          </video>
+        <section className="relative w-full h-screen bg-black overflow-hidden">
+          <div className="absolute inset-0 flex items-center justify-center w-full h-full">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-auto h-full max-w-none object-contain sm:object-cover"
+            >
+              <source src="/video.mp4" type="video/mp4" />
+            </video>
+          </div>
           <div className="absolute inset-110 bg-black bg-opacity-40 z-10 pointer-events-none" />
           <div className="relative z-20 flex flex-col items-center justify-center h-full text-white text-center px-4">
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">Welcome to Flyawoof</h1>
@@ -34,7 +36,7 @@ export default function Home() {
         </section>
       )}
 
-      {/* 🌐 Site Content */}
+      {/* 🌐 Main Site Content */}
       {showSite && (
         <>
           {/* Header */}
@@ -56,7 +58,7 @@ export default function Home() {
             </Link>
           </header>
 
-          {/* ✈️ Book a Flight */}
+          {/* ✈️ Booking Section */}
           <section id="book" className="pt-16 pb-0 bg-white text-center px-4">
             <h2 className="text-3xl font-bold text-[#00AEEF] mb-6">Book Your Flight</h2>
             <iframe
@@ -73,27 +75,30 @@ export default function Home() {
                 { text: "Flyawoof made my trip seamless!", author: "Jane A." },
                 { text: "Highly recommend to all travelers!", author: "Michael B." },
                 { text: "Amazing deals and super easy to use.", author: "Aisha C." },
-              ].map((review, i) => (
+              ].map((r, i) => (
                 <div key={i} className="bg-white shadow-xl p-6 rounded-lg w-full md:w-1/3 hover:scale-105 transition-transform">
-                  <p>{`"${review.text}"`}</p>
-                  <p className="mt-4 font-semibold text-gray-600">{`- ${review.author}`}</p>
+                  <p>{`"${r.text}"`}</p>
+                  <p className="mt-4 font-semibold text-gray-600">{`- ${r.author}`}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* 🌍 Continents Section with Video */}
-          <section id="continents" className="relative w-full min-h-screen overflow-hidden">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute top-0 left-0 w-full h-full object-cover"
-            >
-              <source src="/continent.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          {/* 🌍 Continents Section (Responsive Video) */}
+          <section id="continents" className="relative w-full bg-black overflow-hidden">
+            <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-auto h-full max-w-none object-contain sm:object-cover sm:h-screen"
+              >
+                <source src="/continent.mp4" type="video/mp4" />
+              </video>
+            </div>
+            {/* This div ensures proper height on mobile */}
+            <div className="h-[30vh] sm:h-screen" />
           </section>
 
           {/* 📱 App Download */}
