@@ -164,7 +164,7 @@ export default function Home() {
               <source src="/continent.mp4" type="video/mp4" />
             </video>
           </div>
-          <div className="h-[60vh] sm:h-screen" />
+          <div className="h-[30vh] sm:h-screen" />
         </section>
 
         {/* App Download */}
