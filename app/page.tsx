@@ -7,9 +7,6 @@ import 'remixicon/fonts/remixicon.css';
 
 
 
-import HeroAnimation from '@/components/HeroAnimation';
-
-
 export default function Home() {
   const [showIframe, setShowIframe] = useState(false);
   const [iframeLoaded, setIframeLoaded] = useState(false);
@@ -200,10 +197,16 @@ export default function Home() {
       </div>
 
       {/* ✈️ Image Right */}
-     <div className="w-full md:w-1/2 flex justify-center relative">
-  <HeroAnimation />
-</div>
-
+      <div className="w-full md:w-1/2 flex justify-center">
+        <Image
+          src="/airplane.png"
+          alt="Airplane"
+          width={500}
+          height={400}
+          className="w-full h-auto max-w-[90%] sm:max-w-md md:max-w-full animate-float"
+          priority
+        />
+      </div>
     </div>
   </div>
 </section>
