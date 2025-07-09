@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
+import Head from "next/head";
 
 export default function Home() {
   const [showIframe, setShowIframe] = useState(false);
@@ -49,7 +50,12 @@ export default function Home() {
           </div>
         </div>
       )}
-
+ <Head>
+      <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+      />
+    </Head>
       {/* 🪟 Booking Iframe Modal */}
       {showIframe && (
         <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">
@@ -525,7 +531,7 @@ export default function Home() {
   <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 mb-12 border-b border-white/10 pb-8">
     <div className="flex items-center gap-4">
       <Image
-        src="/flyawoof-logo.png"
+        src="/logo.png"
         alt="Flyawoof Logo"
         width={150}
         height={40}
