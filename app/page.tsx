@@ -170,99 +170,92 @@ export default function Home() {
         {/* 
   {/* 
   ===============================
-  💸 Exciting Offers Section Start
-  Now with full details & animated buttons
+  💸 Premium Exciting Offers Section Start
+  Ultra-polished card design + glowing details
   ===============================
 */}
-<section id="offers" className="bg-white py-12 px-4 sm:px-6 lg:px-8">
-  <div className="max-w-7xl mx-auto text-center mb-10">
-    <h2 className="text-3xl sm:text-4xl font-bold text-[#003C3C]">
-      Exciting Flight Offers
+<section id="offers" className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-7xl mx-auto text-center mb-14">
+    <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C]">
+      ✨ Exclusive Flight Deals Just for You
     </h2>
     <p className="mt-2 text-base sm:text-lg text-[#005f5f]">
-      Limited deals to top destinations, just for you.
+      Premium destinations at unbeatable rates — limited time only.
     </p>
   </div>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
     {/* 🌆 London */}
-    <div className="bg-[#D0F4F4] border border-[#00AEEF1A] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300 flex flex-col justify-between">
-      <Image src="/london.jpg" alt="London" width={400} height={250} className="rounded-lg mb-4" />
-      <div>
-        <h3 className="text-lg font-semibold text-[#003C3C]">Lagos → London</h3>
-        <p className="text-sm text-[#005f5f] mb-1">British Airways • Economy</p>
-        <p className="text-sm text-[#003C3C] font-medium mb-1">From NGN 450,000</p>
-        <p className="text-xs text-gray-500 mb-3">Valid till Aug 30</p>
-        <button
-          onClick={handleBookClick}
-          className="bg-[#00AEEF] text-white w-full py-2 rounded hover:bg-[#008CC2] transition-all font-medium text-sm"
-        >
-          <span className="inline-flex items-center justify-center gap-2">
-            Book Now <span className="animate-swing">✈️</span>
-          </span>
-        </button>
-      </div>
+    <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-2xl p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
+      <Image src="/london.jpg" alt="London" width={400} height={250} className="rounded-lg mb-5" />
+      <h3 className="text-xl font-bold text-[#003C3C] mb-1">Lagos → London</h3>
+      <p className="text-sm text-[#007c91] mb-1">British Airways • Economy</p>
+      <p className="text-sm font-medium text-[#003C3C] mb-1">From NGN 450,000</p>
+      <p className="text-xs text-gray-500 mb-4">Valid till Aug 30</p>
+      <button
+        onClick={handleBookClick}
+        className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-medium text-sm hover:bg-[#008CC2] transition-all"
+      >
+        <span className="inline-flex items-center justify-center gap-2">
+          Book Now <span className="animate-swing">✈️</span>
+        </span>
+      </button>
     </div>
 
     {/* 🗽 New York */}
-    <div className="bg-[#D0F4F4] border border-[#00AEEF1A] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300 flex flex-col justify-between">
-      <Image src="/usa.jpg" alt="New York" width={400} height={250} className="rounded-lg mb-4" />
-      <div>
-        <h3 className="text-lg font-semibold text-[#003C3C]">Lagos → New York</h3>
-        <p className="text-sm text-[#005f5f] mb-1">Delta Airlines • Economy</p>
-        <p className="text-sm text-[#003C3C] font-medium mb-1">From NGN 600,000</p>
-        <p className="text-xs text-gray-500 mb-3">Valid till Sept 10</p>
-        <button
-          onClick={handleBookClick}
-          className="bg-[#00AEEF] text-white w-full py-2 rounded hover:bg-[#008CC2] transition-all font-medium text-sm"
-        >
-          <span className="inline-flex items-center justify-center gap-2">
-            Book Now <span className="animate-swing">✈️</span>
-          </span>
-        </button>
-      </div>
+    <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-2xl p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
+      <Image src="/usa.jpg" alt="New York" width={400} height={250} className="rounded-lg mb-5" />
+      <h3 className="text-xl font-bold text-[#003C3C] mb-1">Lagos → New York</h3>
+      <p className="text-sm text-[#007c91] mb-1">Delta Airlines • Economy</p>
+      <p className="text-sm font-medium text-[#003C3C] mb-1">From NGN 600,000</p>
+      <p className="text-xs text-gray-500 mb-4">Valid till Sept 10</p>
+      <button
+        onClick={handleBookClick}
+        className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-medium text-sm hover:bg-[#008CC2] transition-all"
+      >
+        <span className="inline-flex items-center justify-center gap-2">
+          Book Now <span className="animate-swing">✈️</span>
+        </span>
+      </button>
     </div>
 
     {/* 🕌 Dubai */}
-    <div className="bg-[#D0F4F4] border border-[#00AEEF1A] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300 flex flex-col justify-between">
-      <Image src="/dubai.jpg" alt="Dubai" width={400} height={250} className="rounded-lg mb-4" />
-      <div>
-        <h3 className="text-lg font-semibold text-[#003C3C]">Lagos → Dubai</h3>
-        <p className="text-sm text-[#005f5f] mb-1">Emirates • Economy</p>
-        <p className="text-sm text-[#003C3C] font-medium mb-1">From NGN 300,000</p>
-        <p className="text-xs text-gray-500 mb-3">Valid till Sept 5</p>
-        <button
-          onClick={handleBookClick}
-          className="bg-[#00AEEF] text-white w-full py-2 rounded hover:bg-[#008CC2] transition-all font-medium text-sm"
-        >
-          <span className="inline-flex items-center justify-center gap-2">
-            Book Now <span className="animate-swing">✈️</span>
-          </span>
-        </button>
-      </div>
+    <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-2xl p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
+      <Image src="/dubai.jpg" alt="Dubai" width={400} height={250} className="rounded-lg mb-5" />
+      <h3 className="text-xl font-bold text-[#003C3C] mb-1">Lagos → Dubai</h3>
+      <p className="text-sm text-[#007c91] mb-1">Emirates • Economy</p>
+      <p className="text-sm font-medium text-[#003C3C] mb-1">From NGN 300,000</p>
+      <p className="text-xs text-gray-500 mb-4">Valid till Sept 5</p>
+      <button
+        onClick={handleBookClick}
+        className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-medium text-sm hover:bg-[#008CC2] transition-all"
+      >
+        <span className="inline-flex items-center justify-center gap-2">
+          Book Now <span className="animate-swing">✈️</span>
+        </span>
+      </button>
     </div>
 
     {/* 🗼 Paris */}
-    <div className="bg-[#D0F4F4] border border-[#00AEEF1A] rounded-xl p-5 shadow-md hover:scale-105 hover:shadow-[0_0_30px_#00AEEF66] transition-all duration-300 flex flex-col justify-between">
-      <Image src="/paris.jpg" alt="Paris" width={400} height={250} className="rounded-lg mb-4" />
-      <div>
-        <h3 className="text-lg font-semibold text-[#003C3C]">Lagos → Paris</h3>
-        <p className="text-sm text-[#005f5f] mb-1">Air France • Economy</p>
-        <p className="text-sm text-[#003C3C] font-medium mb-1">From NGN 520,000</p>
-        <p className="text-xs text-gray-500 mb-3">Valid till Aug 25</p>
-        <button
-          onClick={handleBookClick}
-          className="bg-[#00AEEF] text-white w-full py-2 rounded hover:bg-[#008CC2] transition-all font-medium text-sm"
-        >
-          <span className="inline-flex items-center justify-center gap-2">
-            Book Now <span className="animate-swing">✈️</span>
-          </span>
-        </button>
-      </div>
+    <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-2xl p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
+      <Image src="/paris.jpg" alt="Paris" width={400} height={250} className="rounded-lg mb-5" />
+      <h3 className="text-xl font-bold text-[#003C3C] mb-1">Lagos → Paris</h3>
+      <p className="text-sm text-[#007c91] mb-1">Air France • Economy</p>
+      <p className="text-sm font-medium text-[#003C3C] mb-1">From NGN 520,000</p>
+      <p className="text-xs text-gray-500 mb-4">Valid till Aug 25</p>
+      <button
+        onClick={handleBookClick}
+        className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-medium text-sm hover:bg-[#008CC2] transition-all"
+      >
+        <span className="inline-flex items-center justify-center gap-2">
+          Book Now <span className="animate-swing">✈️</span>
+        </span>
+      </button>
     </div>
   </div>
 </section>
-{/* ===== End of Exciting Offers Section ===== */}
+{/* ===== End of Premium Offers Section ===== */}
+
 
       </main>
     </>
