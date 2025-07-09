@@ -654,25 +654,6 @@ export default function Home() {
     </div>
   </div>
 
-  {/* 💳 Payment Logos */}
-  <div className="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-6 border-t border-white/10 pt-6 pb-4 mt-12">
-    <Image src="/paystack.png" alt="Paystack" width={80} height={30} className="object-contain" />
-    <Image src="/rave.png" alt="Rave" width={80} height={30} className="object-contain" />
-    <Image src="/mastercard.png" alt="Mastercard" width={60} height={30} className="object-contain" />
-    <Image src="/visa.png" alt="Visa" width={60} height={30} className="object-contain" />
-  </div>
-
-  {/* 🇳🇬 Proudly Nigerian Badge */}
-  <div className="mt-6 text-center">
-    <Image
-      src="/proudly-nigerian.png"
-      alt="Proudly Nigerian"
-      width={140}
-      height={40}
-      className="mx-auto opacity-90"
-    />
-  </div>
-
   {/* 🔒 Rights Reserved */}
   <div className="text-center text-xs text-white/60 border-t border-white/10 pt-6 mt-4">
     © 2025 Flyawoof. All rights reserved.
@@ -688,18 +669,6 @@ export default function Home() {
 >
   <i className="ri-arrow-up-line text-xl"></i>
 </a>
-
-{/* 💬 WhatsApp Chat */}
-<a
-  href="https://wa.me/2349012345678"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#1ebe5d] text-white p-4 rounded-full shadow-lg transition-all"
-  aria-label="Chat with us on WhatsApp"
->
-  <i className="ri-whatsapp-fill text-2xl"></i>
-</a>
-
       </main>
     </>
   );
