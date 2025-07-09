@@ -6,6 +6,32 @@ import Head from "next/head";
 import 'remixicon/fonts/remixicon.css';
 
 
+// ⬇️ Add this above your Home component
+
+import Lottie from 'lottie-react';
+
+export function HeroAnimation() {
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    fetch('/hero.json') // ✅ It's in public/, so this works
+      .then((res) => res.json())
+      .then(setAnimationData)
+      .catch(console.error);
+  }, []);
+
+  return (
+    animationData && (
+      <Lottie
+        animationData={animationData}
+        loop
+        autoplay
+        className="w-full h-auto max-w-[90%] sm:max-w-md md:max-w-full"
+      />
+    )
+  );
+}
+
 export default function Home() {
   const [showIframe, setShowIframe] = useState(false);
   const [iframeLoaded, setIframeLoaded] = useState(false);
@@ -196,16 +222,10 @@ export default function Home() {
       </div>
 
       {/* ✈️ Image Right */}
-      <div className="w-full md:w-1/2 flex justify-center">
-        <Image
-          src="/airplane.png"
-          alt="Airplane"
-          width={500}
-          height={400}
-          className="w-full h-auto max-w-[90%] sm:max-w-md md:max-w-full animate-float"
-          priority
-        />
-      </div>
+     <div className="w-full md:w-1/2 flex justify-center relative">
+  <HeroAnimation />
+</div>
+
     </div>
   </div>
 </section>
