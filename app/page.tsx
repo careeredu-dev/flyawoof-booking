@@ -504,16 +504,26 @@ export default function Home() {
   </div>
 </section>
 {/* ===== End of Download App Section ===== */}
-{/* 
-  ===============================
-  🛬 Footer Start
-  Optimized layout with logo, socials, payment logos & newsletter
-  ===============================
-*/}
+{/* ===============================
+🕊 Decorative Wave Divider Above Footer
+=============================== */}
+<div className="w-full -mb-1">
+  <svg viewBox="0 0 1440 320" className="w-full h-24" preserveAspectRatio="none">
+    <path
+      fill="#012727"
+      d="M0,160L80,144C160,128,320,96,480,101.3C640,107,800,149,960,160C1120,171,1280,149,1360,138.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+    />
+  </svg>
+</div>
+
+{/* ===============================
+🛬 Flyawoof Footer Start
+=============================== */}
 <footer className="bg-[#012727] text-white pt-14 px-6 sm:px-10 pb-10">
-  {/* 🔵 Logo + Social Section */}
-  <div className="max-w-7xl mx-auto mb-12 grid grid-cols-1 lg:grid-cols-5 gap-10">
-    <div className="flex flex-col items-center lg:items-start gap-4 lg:col-span-1">
+
+  {/* 🔵 Logo & Social Icons */}
+  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 mb-12 border-b border-white/10 pb-8">
+    <div className="flex items-center gap-4">
       <Image
         src="/flyawoof-logo.png"
         alt="Flyawoof Logo"
@@ -521,7 +531,7 @@ export default function Home() {
         height={40}
         className="object-contain"
       />
-      <div className="flex gap-4">
+      <div className="flex gap-4 ml-2">
         {[
           { icon: "instagram", href: "#" },
           { icon: "twitter", href: "#" },
@@ -534,81 +544,116 @@ export default function Home() {
         ))}
       </div>
     </div>
+  </div>
 
-    {/* 📦 Footer Content */}
-    <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-      {/* 🌍 Continents */}
-      <div>
-        <h3 className="text-lg font-semibold mb-4">Continents We Cover</h3>
-        <ul className="text-sm space-y-2 text-white/90">
-          <li>Africa</li>
-          <li>Europe</li>
-          <li>Asia</li>
-          <li>North America</li>
-          <li>Middle East</li>
-        </ul>
-      </div>
-
-      {/* ✈️ Airline Partners */}
-      <div>
-        <h3 className="text-lg font-semibold mb-4">Airline Partners</h3>
-        <ul className="text-sm space-y-2 text-white/90">
-          <li>British Airways</li>
-          <li>Delta Airlines</li>
-          <li>Emirates</li>
-          <li>Qatar Airways</li>
-          <li>Air France</li>
-        </ul>
-      </div>
-
-      {/* 📖 About */}
-      <div>
-        <h3 className="text-lg font-semibold mb-4">About Flyawoof</h3>
-        <ul className="text-sm space-y-2 text-white/90">
-          <li>Who we are</li>
-          <li>How we work</li>
-          <li>Contact us</li>
-          <li>Terms & Conditions</li>
-        </ul>
-      </div>
-
-      {/* 📬 Newsletter */}
-      <div>
-        <h3 className="text-lg font-semibold mb-4">Join Our Newsletter</h3>
-        <p className="text-sm text-white/90 mb-3">
-          Get deals, route updates, and travel tips delivered to your inbox.
-        </p>
-        <form className="flex flex-col sm:flex-row items-center gap-2">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="w-full px-4 py-2 rounded-md text-black text-sm focus:outline-none"
-          />
-          <button
-            type="submit"
-            className="bg-[#00AEEF] hover:bg-[#008CC2] transition-all px-5 py-2 rounded-md text-sm font-medium"
-          >
-            Subscribe
-          </button>
-        </form>
-      </div>
+  {/* 📦 Footer Columns */}
+  <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <h3 className="text-lg font-semibold mb-4">Continents We Cover</h3>
+      <ul className="text-sm space-y-2 text-white/90">
+        <li>Africa</li>
+        <li>Europe</li>
+        <li>Asia</li>
+        <li>North America</li>
+        <li>Middle East</li>
+      </ul>
+    </div>
+    <div>
+      <h3 className="text-lg font-semibold mb-4">Airline Partners</h3>
+      <ul className="text-sm space-y-2 text-white/90">
+        <li>British Airways</li>
+        <li>Delta Airlines</li>
+        <li>Emirates</li>
+        <li>Qatar Airways</li>
+        <li>Air France</li>
+      </ul>
+    </div>
+    <div>
+      <h3 className="text-lg font-semibold mb-4">About Flyawoof</h3>
+      <ul className="text-sm space-y-2 text-white/90">
+        <li>Who we are</li>
+        <li>How we work</li>
+        <li>Contact us</li>
+        <li>Terms & Conditions</li>
+      </ul>
+    </div>
+    <div>
+      <h3 className="text-lg font-semibold mb-4">Join Our Newsletter</h3>
+      <p className="text-sm text-white/90 mb-3">
+        Get deals, updates, and travel inspiration in your inbox.
+      </p>
+      <form
+        action="https://careeredu.us21.list-manage.com/subscribe/post?u=c37a6e24f0352efab31c71d1a&amp;id=0ef6369907&amp;f_id=00c941e6f0"
+        method="post"
+        target="_blank"
+        className="flex flex-col sm:flex-row items-center gap-2"
+      >
+        <input
+          type="email"
+          name="EMAIL"
+          id="mce-EMAIL"
+          required
+          placeholder="Enter your email"
+          className="w-full px-4 py-2 rounded-md text-black text-sm focus:outline-none"
+        />
+        <button
+          type="submit"
+          className="bg-[#00AEEF] hover:bg-[#008CC2] transition-all px-5 py-2 rounded-md text-sm font-medium"
+        >
+          Subscribe
+        </button>
+        <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
+          <input type="text" name="b_c37a6e24f0352efab31c71d1a_0ef6369907" tabIndex={-1} />
+        </div>
+      </form>
     </div>
   </div>
 
   {/* 💳 Payment Logos */}
-  <div className="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-6 border-t border-white/10 pt-6 pb-4">
+  <div className="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-6 border-t border-white/10 pt-6 pb-4 mt-12">
     <Image src="/paystack.png" alt="Paystack" width={80} height={30} className="object-contain" />
     <Image src="/rave.png" alt="Rave" width={80} height={30} className="object-contain" />
     <Image src="/mastercard.png" alt="Mastercard" width={60} height={30} className="object-contain" />
     <Image src="/visa.png" alt="Visa" width={60} height={30} className="object-contain" />
   </div>
 
+  {/* 🇳🇬 Proudly Nigerian Badge */}
+  <div className="mt-6 text-center">
+    <Image
+      src="/proudly-nigerian.png"
+      alt="Proudly Nigerian"
+      width={140}
+      height={40}
+      className="mx-auto opacity-90"
+    />
+  </div>
+
   {/* 🔒 Rights Reserved */}
-  <div className="text-center text-xs text-white/60 border-t border-white/10 pt-6">
+  <div className="text-center text-xs text-white/60 border-t border-white/10 pt-6 mt-4">
     © 2025 Flyawoof. All rights reserved.
   </div>
 </footer>
 {/* ===== End of Footer ===== */}
+
+{/* 🔝 Back to Top */}
+<a
+  href="#"
+  className="fixed bottom-6 left-6 z-50 bg-[#00AEEF] hover:bg-[#008CC2] text-white p-3 rounded-full shadow-md transition-all"
+  aria-label="Back to top"
+>
+  <i className="ri-arrow-up-line text-xl"></i>
+</a>
+
+{/* 💬 WhatsApp Chat */}
+<a
+  href="https://wa.me/2349012345678"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#1ebe5d] text-white p-4 rounded-full shadow-lg transition-all"
+  aria-label="Chat with us on WhatsApp"
+>
+  <i className="ri-whatsapp-fill text-2xl"></i>
+</a>
 
       </main>
     </>
