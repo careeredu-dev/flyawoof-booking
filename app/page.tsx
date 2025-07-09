@@ -3,6 +3,8 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Head from "next/head";
+import 'remixicon/fonts/remixicon.css';
+
 
 export default function Home() {
   const [showIframe, setShowIframe] = useState(false);
