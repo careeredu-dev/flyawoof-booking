@@ -1,3 +1,14 @@
+/* ✨ Remix Icon import must come before everything */
+@import url("https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css");
+
+/* your global styles follow here... */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS below */
+
+
 @import "tailwindcss";
 
 :root {

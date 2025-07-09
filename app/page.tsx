@@ -507,105 +507,104 @@ export default function Home() {
 {/* 
   ===============================
   🛬 Footer Start
-  Responsive + Payment & Social Icons
+  Optimized layout with logo, socials, payment logos & newsletter
   ===============================
 */}
-<footer className="bg-[#003C3C] text-white pt-14 pb-8 px-6 sm:px-10">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-
-    {/* 🌍 Continents */}
-    <div>
-      <h3 className="text-lg font-semibold mb-4">Continents We Cover</h3>
-      <ul className="text-sm space-y-2 text-white/90">
-        <li>Africa</li>
-        <li>Europe</li>
-        <li>Asia</li>
-        <li>North America</li>
-        <li>Middle East</li>
-      </ul>
+<footer className="bg-[#012727] text-white pt-14 px-6 sm:px-10 pb-10">
+  {/* 🔵 Logo + Social Section */}
+  <div className="max-w-7xl mx-auto mb-12 grid grid-cols-1 lg:grid-cols-5 gap-10">
+    <div className="flex flex-col items-center lg:items-start gap-4 lg:col-span-1">
+      <Image
+        src="/flyawoof-logo.png"
+        alt="Flyawoof Logo"
+        width={150}
+        height={40}
+        className="object-contain"
+      />
+      <div className="flex gap-4">
+        {[
+          { icon: "instagram", href: "#" },
+          { icon: "twitter", href: "#" },
+          { icon: "facebook", href: "#" },
+          { icon: "linkedin", href: "#" }
+        ].map(({ icon, href }) => (
+          <a key={icon} href={href} className="text-white/70 hover:text-white text-xl transition-all">
+            <i className={`ri-${icon}-fill`}></i>
+          </a>
+        ))}
+      </div>
     </div>
 
-    {/* ✈️ Airline Partners */}
-    <div>
-      <h3 className="text-lg font-semibold mb-4">Airline Partners</h3>
-      <ul className="text-sm space-y-2 text-white/90">
-        <li>British Airways</li>
-        <li>Delta Airlines</li>
-        <li>Emirates</li>
-        <li>Qatar Airways</li>
-        <li>Air France</li>
-      </ul>
-    </div>
+    {/* 📦 Footer Content */}
+    <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      {/* 🌍 Continents */}
+      <div>
+        <h3 className="text-lg font-semibold mb-4">Continents We Cover</h3>
+        <ul className="text-sm space-y-2 text-white/90">
+          <li>Africa</li>
+          <li>Europe</li>
+          <li>Asia</li>
+          <li>North America</li>
+          <li>Middle East</li>
+        </ul>
+      </div>
 
-    {/* 📖 About */}
-    <div>
-      <h3 className="text-lg font-semibold mb-4">About Flyawoof</h3>
-      <ul className="text-sm space-y-2 text-white/90">
-        <li>Who we are</li>
-        <li>How we work</li>
-        <li>Contact us</li>
-        <li>Terms & Conditions</li>
-      </ul>
-    </div>
+      {/* ✈️ Airline Partners */}
+      <div>
+        <h3 className="text-lg font-semibold mb-4">Airline Partners</h3>
+        <ul className="text-sm space-y-2 text-white/90">
+          <li>British Airways</li>
+          <li>Delta Airlines</li>
+          <li>Emirates</li>
+          <li>Qatar Airways</li>
+          <li>Air France</li>
+        </ul>
+      </div>
 
-    {/* 📬 Newsletter */}
-    <div>
-      <h3 className="text-lg font-semibold mb-4">Join Our Newsletter</h3>
-      <p className="text-sm text-white/90 mb-3">
-        Get deals, route updates, and travel tips in your inbox.
-      </p>
-      <form className="flex flex-col sm:flex-row items-center gap-2">
-        <input
-          type="email"
-          placeholder="Enter your email"
-          className="w-full px-4 py-2 rounded-md text-black text-sm focus:outline-none"
-        />
-        <button
-          type="submit"
-          className="bg-[#00AEEF] hover:bg-[#008CC2] transition-all px-5 py-2 rounded-md text-sm font-medium"
-        >
-          Subscribe
-        </button>
-      </form>
+      {/* 📖 About */}
+      <div>
+        <h3 className="text-lg font-semibold mb-4">About Flyawoof</h3>
+        <ul className="text-sm space-y-2 text-white/90">
+          <li>Who we are</li>
+          <li>How we work</li>
+          <li>Contact us</li>
+          <li>Terms & Conditions</li>
+        </ul>
+      </div>
+
+      {/* 📬 Newsletter */}
+      <div>
+        <h3 className="text-lg font-semibold mb-4">Join Our Newsletter</h3>
+        <p className="text-sm text-white/90 mb-3">
+          Get deals, route updates, and travel tips delivered to your inbox.
+        </p>
+        <form className="flex flex-col sm:flex-row items-center gap-2">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="w-full px-4 py-2 rounded-md text-black text-sm focus:outline-none"
+          />
+          <button
+            type="submit"
+            className="bg-[#00AEEF] hover:bg-[#008CC2] transition-all px-5 py-2 rounded-md text-sm font-medium"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 
-  {/* 🔗 Social + Payments + Top Arrow */}
-  <div className="max-w-7xl mx-auto border-t border-white/10 pt-6 flex flex-col-reverse sm:flex-row items-center justify-between gap-6">
-
-    {/* 🌐 Social Icons */}
-    <div className="flex gap-4">
-      {[
-        { icon: "instagram", href: "#" },
-        { icon: "twitter", href: "#" },
-        { icon: "facebook", href: "#" },
-        { icon: "linkedin", href: "#" }
-      ].map(({ icon, href }) => (
-        <a key={icon} href={href} className="text-white/70 hover:text-white transition-all text-xl">
-          <i className={`ri-${icon}-fill`}></i>
-        </a>
-      ))}
-    </div>
-
-    {/* 💳 Payment Icons */}
-    <div className="flex flex-wrap gap-3 items-center justify-center">
-      <Image src="/paystack.png" alt="Paystack" width={80} height={30} />
-      <Image src="/flutterwave.png" alt="Flutterwave" width={80} height={30} />
-      <Image src="/mastercard.png" alt="Mastercard" width={50} height={30} />
-      <Image src="/visa.png" alt="Visa" width={50} height={30} />
-    </div>
-
-    {/* 🔝 Back to Top */}
-    <a
-      href="#"
-      className="text-sm text-white/70 hover:text-white transition-all flex items-center gap-1"
-    >
-      <span className="text-lg">↑</span> Back to Top
-    </a>
+  {/* 💳 Payment Logos */}
+  <div className="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-6 border-t border-white/10 pt-6 pb-4">
+    <Image src="/paystack.png" alt="Paystack" width={80} height={30} className="object-contain" />
+    <Image src="/rave.png" alt="Rave" width={80} height={30} className="object-contain" />
+    <Image src="/mastercard.png" alt="Mastercard" width={60} height={30} className="object-contain" />
+    <Image src="/visa.png" alt="Visa" width={60} height={30} className="object-contain" />
   </div>
 
-  {/* 🔒 Bottom Line */}
-  <div className="text-center text-xs text-white/60 mt-6">
+  {/* 🔒 Rights Reserved */}
+  <div className="text-center text-xs text-white/60 border-t border-white/10 pt-6">
     © 2025 Flyawoof. All rights reserved.
   </div>
 </footer>
