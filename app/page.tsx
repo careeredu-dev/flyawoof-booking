@@ -25,31 +25,67 @@ export default function Home() {
   };
 
   return (
-    <>
-      {/* 💱 Currency Selector Modal */}
-      {showCurrencyModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-          <div className="bg-white rounded-xl p-6 shadow-lg w-[90%] max-w-sm text-center">
-            <h2 className="text-xl font-semibold mb-4 text-[#003C3C]">
-              Choose Your Preferred Currency
-            </h2>
-            <div className="flex justify-center gap-4">
-              <button
-                onClick={() => handleCurrencySelect("NGN")}
-                className="bg-[#00AEEF] text-white px-4 py-2 rounded hover:bg-[#008CC2]"
-              >
-                NGN
-              </button>
-              <button
-                onClick={() => handleCurrencySelect("USD")}
-                className="bg-[#00AEEF] text-white px-4 py-2 rounded hover:bg-[#008CC2]"
-              >
-                USD
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+     <>
+    <Head>
+      <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+      />
+    </Head>
+    
+      {/* 🌍 Currency Selector Modal - Ultra Premium */}
+{showCurrencyModal && (
+  <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center px-4 sm:px-0">
+    <div className="animate-fadeInScale bg-white/10 border border-white/20 backdrop-blur-xl rounded-2xl shadow-2xl max-w-md w-full p-8 relative text-white text-center">
+
+      {/* 🔘 Close button (optional) */}
+      <button
+        onClick={() => setShowCurrencyModal(false)}
+        className="absolute top-4 right-4 text-white/70 hover:text-white text-lg"
+        aria-label="Close modal"
+      >
+        <i className="ri-close-line"></i>
+      </button>
+
+      {/* 💎 Modal Content */}
+      <div className="mb-6">
+        <h2 className="text-2xl font-bold mb-2 flex items-center justify-center gap-2">
+          <i className="ri-money-dollar-circle-line text-[#00AEEF] text-3xl"></i>
+          Choose Currency
+        </h2>
+        <p className="text-white/70 text-sm">
+          Set your preferred currency for flight prices
+        </p>
+      </div>
+
+      {/* 💸 Currency Options */}
+      <div className="flex justify-center gap-4 mb-6">
+        {['NGN', 'USD', 'GBP'].map((cur) => (
+          <button
+            key={cur}
+            onClick={() => handleCurrencySelect(cur)}
+            className={`px-5 py-2 rounded-full text-sm font-medium transition-all border ${
+              selectedCurrency === cur
+                ? 'bg-[#00AEEF] border-[#00AEEF] text-white shadow-lg'
+                : 'bg-white/10 border-white/30 text-white/80 hover:bg-white/20'
+            }`}
+          >
+            {cur}
+          </button>
+        ))}
+      </div>
+
+      {/* 🚀 Continue Button */}
+      <button
+        onClick={() => setShowCurrencyModal(false)}
+        className="w-full bg-[#00AEEF] hover:bg-[#0099cc] text-white font-semibold py-3 rounded-full shadow-md transition-all"
+      >
+        Continue
+      </button>
+    </div>
+  </div>
+)}
+
  <Head>
       <link
         href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
