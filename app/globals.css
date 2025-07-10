@@ -163,3 +163,8 @@ html {
 .animate-fadeInScale {
   animation: fadeInScale 0.4s ease-out both;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-section {
+    padding-bottom: 3rem; /* Or tweak as needed */
+  }
+}
