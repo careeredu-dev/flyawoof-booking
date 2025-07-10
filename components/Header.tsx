@@ -7,7 +7,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-lg shadow-sm z-50 transition-all font-[Geist]">
+    <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-lg shadow-sm z-30 transition-all font-[Geist]">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 h-16 sm:h-20">
         <Link href="/" className="flex items-center">
           <Image
@@ -58,7 +58,7 @@ export default function Header() {
 
       {/* 📱 Mobile Nav Panel */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 shadow-md z-40 animate-fadeIn">
+        <div className="md:hidden bg-white border-t border-gray-100 shadow-md z-[60] animate-fadeIn">
           <nav className="flex flex-col px-6 py-4 space-y-4 text-[#003C3C] font-medium text-base tracking-wide">
             <a href="/" onClick={() => setMobileMenuOpen(false)}>Home</a>
             <a href="#offers" onClick={() => setMobileMenuOpen(false)}>Offers</a>
