@@ -142,18 +142,26 @@ export default function Home() {
       <main className="min-h-screen bg-white font-sans scroll-smooth text-[#003C3C]">
         <Header />
 
+
+
+
+
+
+
+
+
+
+
+
         {/* 🍃 Hero Section */}
         {/* 🍃 Hero Section */}
-<section className="w-full max-w-[100vw] overflow-x-hidden relative bg-gradient-to-br from-[#003C3C] via-[#005F5F] to-[#00AEEF]/90 pt-12 sm:pt-20">
+<section className="w-full pt-20 pb-16 bg-[#003C3C] md:bg-gradient-to-r md:from-[#003C3C] md:via-[#005F5F] md:to-[#00AEEF]/90 text-white font-[Geist] relative overflow-hidden">
 
+  {/* 🔒 Background Reinforcement */}
+  <div className="absolute inset-0 bg-[#003C3C] z-0" />
 
-  {/* ☁️ Floating Clouds */}
-  <div className="absolute top-10 left-[-100px] w-40 h-24 bg-white opacity-50 rounded-full blur-2xl animate-cloudFloat" />
-  <div className="absolute top-20 right-[-80px] w-32 h-20 bg-white opacity-60 rounded-full blur-xl animate-cloudFloat delay-1000" />
-  <div className="absolute top-0 left-1/2 w-24 h-14 bg-white opacity-40 rounded-full blur-2xl animate-cloudFloat delay-[3000ms]" />
-
-  {/* Decorative SVG Wave */}
-  <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+  {/* 🌊 SVG Wave — Deep Blue for Premium Feel */}
+  <div className="hidden md:block absolute inset-0 z-0 overflow-hidden pointer-events-none">
     <svg
       className="w-full h-full"
       viewBox="0 0 1440 320"
@@ -161,48 +169,48 @@ export default function Home() {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill="#003C3C"
-        fillOpacity="0.03"
+        fill="#005F5F"
+        fillOpacity="1"
         d="M0,192L48,186.7C96,181,192,171,288,154.7C384,139,480,117,576,122.7C672,128,768,160,864,186.7C960,213,1056,235,1152,224C1248,213,1344,171,1392,149.3L1440,128L1440,320L0,320Z"
       />
     </svg>
   </div>
 
-  {/* Hero Content */}
+  {/* 🌍 Hero Content */}
   <div className="relative z-10 px-4 py-10 sm:py-16">
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
-      {/* 🌍 Text Left */}
-      <div className="w-full md:w-1/2 text-center md:text-left">
-      <h1 className="text-4xl sm:text-6xl font-extrabold leading-tight mb-4 animate-fadeUp tracking-tight text-white drop-shadow-lg">
-  Explore the World<br />
-  with <span className="text-[#00AEEF]">Flyawoof</span><br />
-  Today
-</h1>
+      {/* ✍️ Text Section */}
+      <div className="w-full md:w-1/2 text-center md:text-left bg-[#003C3C]">
+        <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-4 tracking-tight text-white">
+          Explore the World<br />
+          with <span className="text-[#00AEEF] font-semibold">Flyawoof</span><br />
+          Today
+        </h1>
 
-
-        <p className="text-base sm:text-lg text-white/80 mb-6 animate-fadeUp">
+        <p className="text-base sm:text-lg text-white/80 mb-6">
           Book smarter. Travel lighter.<br />
           Discover easier.
         </p>
+
         <button
           onClick={handleBookClick}
-          className="group relative bg-white border border-[#00AEEF] text-[#00AEEF] px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-[#00AEEF] hover:text-white transition-all animate-glow"
+          className="group relative bg-white border border-[#00AEEF] text-[#00AEEF] px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-[#00AEEF] hover:text-white transition-all"
         >
           <span className="inline-flex items-center gap-2">
-            Book a Flight <span className="animate-swing">✈️</span>
+            Book a Flight <span>✈️</span>
           </span>
         </button>
       </div>
 
-      {/* ✈️ Image Right */}
-      <div className="w-full md:w-1/2 flex justify-center">
+      {/* 🎟️ Image Section with Your Ticket */}
+      <div className="w-full md:w-1/2 flex justify-center items-center bg-[#003C3C]">
         <Image
           src="/airplane.png"
-          alt="Airplane"
+          alt="Airplane ticket"
           width={500}
           height={400}
-          className="w-full h-auto max-w-[90%] sm:max-w-md md:max-w-full animate-float"
+          className="w-full h-auto max-w-[90%] sm:max-w-md md:max-w-full"
           priority
         />
       </div>
@@ -210,6 +218,24 @@ export default function Home() {
     </div>
   </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         {/* 
@@ -674,15 +700,13 @@ export default function Home() {
 </footer>
 
 {/* ☝️ Back to Top Button */}
-{!showIframe && (
-  <a
-    href="#"
-    className="fixed bottom-6 left-6 z-50 bg-[#00AEEF] hover:bg-[#008CC2] text-white p-3 rounded-full shadow-lg transition duration-300 hover:scale-105"
-    aria-label="Back to top"
-  >
-    <i className="ri-arrow-up-line text-xl"></i>
-  </a>
-)}
+<a
+  href="#"
+  className="fixed bottom-6 left-6 z-50 bg-[#00AEEF] hover:bg-[#008CC2] text-white p-3 rounded-full shadow-lg transition duration-300 hover:scale-105"
+  aria-label="Back to top"
+>
+  <i className="ri-arrow-up-line text-xl"></i>
+</a>
 
       </main>
     </>
