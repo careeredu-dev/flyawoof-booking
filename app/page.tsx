@@ -573,20 +573,19 @@ export default function Home() {
 {/* ===============================
 🕊 Decorative Wave Divider Above Footer
 =============================== */}
-<div className="w-full -mb-1">
-  <svg viewBox="0 0 1440 320" className="w-full h-24" preserveAspectRatio="none">
-    <path
-      fill="#00AEEF"
-      d="M0,160L80,144C160,128,320,96,480,101.3C640,107,800,149,960,160C1120,171,1280,149,1360,138.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-    />
-  </svg>
-</div>
 
 {/* ===============================
 🛬 Flyawoof Footer Start
 =============================== */}
-<footer className="relative bg-[#F9FEFF] text-[#003C3C] pt-14 px-6 sm:px-10 pb-10 overflow-hidden">
-  <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row justify-center gap-12 border-b border-[#E6E6E6] pb-8">
+{/* ===============================
+🕊 Decorative Wave Divider Above Footer
+=============================== */}
+
+{/* ===============================
+🛬 Flyawoof Footer Start
+=============================== */}
+<footer className="relative bg-[#012E2E] text-white pt-14 px-6 sm:px-10 pb-10 overflow-hidden">
+  <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row justify-center gap-12 border-b border-white/10 pb-8">
 
     {/* 🔵 Logo + About + Socials */}
     <div className="w-full lg:max-w-md flex flex-col items-center lg:items-start text-center lg:text-left gap-4">
@@ -597,7 +596,7 @@ export default function Home() {
         height={55}
         className="object-contain hover:scale-105 transition-transform duration-300"
       />
-      <p className="text-[#555] text-sm leading-snug font-light">
+      <p className="text-white/75 text-sm leading-snug font-light">
         Flyawoof is your passport to the skies — unlocking global flight deals, elite carriers, and seamless bookings. From Lagos to London, we fly with flair.
       </p>
       <div className="flex justify-center lg:justify-start gap-4 mt-2">
@@ -605,7 +604,7 @@ export default function Home() {
           <a
             key={icon}
             href="#"
-            className="text-[#666] hover:text-[#00AEEF] text-xl transition hover:scale-110"
+            className="text-white/70 hover:text-[#00AEEF] text-xl transition hover:scale-110"
             aria-label={`Flyawoof on ${icon}`}
           >
             <i className={`ri-${icon}-fill`}></i>
@@ -675,7 +674,7 @@ export default function Home() {
     ].map(({ title, items }) => (
       <div key={title}>
         <h3 className="text-lg font-semibold mb-4 text-[#00AEEF]">{title}</h3>
-        <ul className="text-sm space-y-2 text-[#333]">
+        <ul className="text-sm space-y-2 text-white/90">
           {items.map((item) => (
             <li key={item}>{item}</li>
           ))}
@@ -685,7 +684,7 @@ export default function Home() {
   </div>
 
   {/* 🔒 Footer Copyright */}
-  <div className="relative z-10 text-center text-xs text-[#666] border-t border-[#E6E6E6] pt-6 mt-10 tracking-wide">
+  <div className="relative z-10 text-center text-xs text-white/60 border-t border-white/10 pt-6 mt-10 tracking-wide">
     © 2025 Flyawoof. All rights reserved.
   </div>
 </footer>
