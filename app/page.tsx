@@ -141,7 +141,7 @@ export default function Home() {
         <Header />
 
         {/* 🍃 Hero Section */}
-        <section className="w-full relative bg-[#E6FFF8] overflow-hidden min-h-[90vh]">
+        <section className="w-full relative bg-[#E6FFF8] overflow-hidden min-h-[0vh]">
           {/* ☁️ Floating Clouds */}
           <div className="absolute top-10 left-[-100px] w-40 h-24 bg-white opacity-50 rounded-full blur-2xl animate-cloudFloat" />
           <div className="absolute top-20 right-[-80px] w-32 h-20 bg-white opacity-60 rounded-full blur-xl animate-cloudFloat delay-1000" />
@@ -697,6 +697,7 @@ export default function Home() {
 >
   <i className="ri-arrow-up-line text-xl"></i>
 </a>
+
       </main>
     </>
   );
