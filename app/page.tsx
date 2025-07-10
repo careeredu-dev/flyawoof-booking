@@ -323,7 +323,7 @@ export default function Home() {
   Premium glass cards + image avatars
   ===============================
 */}
-<section id="testimonials" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#E8FBFF] to-white">
+<section id="reviews" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#E8FBFF] to-white">
   <div className="max-w-7xl mx-auto text-center mb-14">
     <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C]">
   What Our <span className="text-[#00AEEF]">Travelers Are Saying</span>
@@ -511,7 +511,7 @@ export default function Home() {
   Optimized mobile layout: image placed between text and badges
   ===============================
 */}
-<section id="download-app" className="bg-gradient-to-b from-white to-[#F9FEFF] py-20 px-4 sm:px-6 lg:px-8">
+<section id="download" className="bg-gradient-to-b from-white to-[#F9FEFF] py-20 px-4 sm:px-6 lg:px-8">
   <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
     
     {/* 📝 Right: Text + Image + Badges (shared on mobile) */}
