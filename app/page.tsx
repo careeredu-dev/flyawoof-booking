@@ -511,82 +511,64 @@ export default function Home() {
   Optimized mobile layout: image placed between text and badges
   ===============================
 */}
-<section
-  id="download-app"
-  className="relative bg-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
->
-  {/* 🪞 Gradient Background */}
-  <div className="absolute inset-0 bg-gradient-to-b from-[#F9FEFF] via-white to-[#F0FCFF] z-0"></div>
+<section id="download-app" className="bg-gradient-to-b from-white to-[#F9FEFF] py-20 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
+    
+    {/* 📝 Right: Text + Image + Badges (shared on mobile) */}
+    <div className="w-full lg:w-1/2 text-center lg:text-left animate-fadeUp">
 
-  <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
+      {/* ✏️ Heading + Description */}
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C] mb-4">
+  <span className="text-[#00AEEF]">Book, Track & Travel</span><br className="hidden sm:block" /> Anytime, Anywhere
+</h2>
 
-    {/* 📄 Right: Text & Buttons */}
-    <div className="w-full lg:w-[45%] text-center lg:text-left animate-fadeUp">
-
-      {/* 🌟 Tagline */}
-      <p className="text-[#00AEEF] font-medium tracking-widest uppercase mb-4">
-        Your Travel Command Center
-      </p>
-
-      {/* ✏️ Heading */}
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C] mb-4 leading-tight">
-        <span className="text-[#00AEEF]">Book, Track & Travel</span><br className="hidden sm:block" />
-        Anytime, Anywhere
-      </h2>
-
-      {/* 💬 Description */}
-      <p className="text-base sm:text-lg text-[#005f5f] mb-6 leading-relaxed tracking-wide">
+      <p className="text-base sm:text-lg text-[#005f5f] mb-6">
         Download the Flyawoof mobile app to book flights, manage your travel, get instant updates,
         and even receive your ticket via WhatsApp — all from your pocket.
       </p>
 
-      {/* 📱 Mobile Image (only on small screens) */}
+      {/* 📱 Image (visible first on mobile) */}
       <div className="block lg:hidden mb-6">
         <Image
           src="/screenshot.png"
           alt="Flyawoof Mobile App Preview"
-          width={400}
-          height={550}
-          className="w-full max-w-[400px] mx-auto rounded-xl shadow-xl"
+          width={500}
+          height={600}
+          className="w-full max-w-sm mx-auto rounded-xl shadow-xl"
         />
       </div>
 
-      {/* 🛍️ Store Buttons */}
+      {/* 🛍️ Store Badges */}
       <div className="flex justify-center lg:justify-start gap-4">
-        <div className="relative group">
-          <Image
-            src="/google-play.png"
-            alt="Download on Google Play"
-            width={160}
-            height={48}
-            className="cursor-pointer transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(0,174,239,0.4)]"
-          />
-        </div>
-        <div className="relative group">
-          <Image
-            src="/app-store.png"
-            alt="Download on App Store"
-            width={160}
-            height={48}
-            className="cursor-pointer transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(0,174,239,0.4)]"
-          />
-        </div>
+        <Image
+          src="/google-play.png"
+          alt="Download on Google Play"
+          width={160}
+          height={48}
+          className="cursor-pointer hover:scale-105 transition-all duration-200"
+        />
+        <Image
+          src="/app-store.png"
+          alt="Download on App Store"
+          width={160}
+          height={48}
+          className="cursor-pointer hover:scale-105 transition-all duration-200"
+        />
       </div>
     </div>
 
-    {/* ✨ Left: Desktop Image */}
-    <div className="hidden lg:flex w-full lg:w-[55%] justify-center animate-fadeUp delay-100">
+    {/* 📱 Left: Screenshot image (desktop only) */}
+    <div className="hidden lg:block w-full lg:w-1/2 animate-fadeUp delay-100">
       <Image
         src="/screenshot.png"
         alt="Flyawoof Mobile App Preview"
-        width={600}
-        height={700}
-        className="w-full max-w-[600px] h-auto rounded-xl shadow-[0_10px_40px_rgba(0,174,239,0.3)] animate-floatSlow"
+        width={500}
+        height={600}
+        className="w-full max-w-sm mx-auto rounded-xl shadow-xl"
       />
     </div>
   </div>
 </section>
-
 {/* ===== End of Download App Section ===== */}
 {/* ===============================
 🕊 Decorative Wave Divider Above Footer
