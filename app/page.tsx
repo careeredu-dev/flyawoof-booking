@@ -674,13 +674,15 @@ export default function Home() {
 </footer>
 
 {/* ☝️ Back to Top Button */}
-<a
-  href="#"
-  className="fixed bottom-6 left-6 z-50 bg-[#00AEEF] hover:bg-[#008CC2] text-white p-3 rounded-full shadow-lg transition duration-300 hover:scale-105"
-  aria-label="Back to top"
->
-  <i className="ri-arrow-up-line text-xl"></i>
-</a>
+{!showIframe && (
+  <a
+    href="#"
+    className="fixed bottom-6 left-6 z-50 bg-[#00AEEF] hover:bg-[#008CC2] text-white p-3 rounded-full shadow-lg transition duration-300 hover:scale-105"
+    aria-label="Back to top"
+  >
+    <i className="ri-arrow-up-line text-xl"></i>
+  </a>
+)}
 
       </main>
     </>
