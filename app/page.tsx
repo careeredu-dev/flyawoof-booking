@@ -576,23 +576,22 @@ export default function Home() {
 <div className="w-full -mb-1">
   <svg viewBox="0 0 1440 320" className="w-full h-24" preserveAspectRatio="none">
     <path
-      fill="#012727"
+      fill="#00AEEF"
       d="M0,160L80,144C160,128,320,96,480,101.3C640,107,800,149,960,160C1120,171,1280,149,1360,138.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
     />
   </svg>
 </div>
 
+
 {/* ===============================
 🛬 Flyawoof Footer Start
 =============================== */}
-<footer className="relative bg-[#012727] text-white pt-14 px-6 sm:px-10 pb-10 overflow-hidden">
-  {/* 🌄 Background Gradient */}
-  <div className="absolute inset-0 bg-gradient-to-br from-[#012727] via-[#013B3B] to-[#005f5f] opacity-80 z-0 pointer-events-none"></div>
-
-  <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 mb-12 border-b border-white/10 pb-8">
+<footer className="relative bg-white text-[#003C3C] pt-14 px-6 sm:px-10 pb-10 overflow-hidden">
+  {/* 🧭 Top Section: Logo + Newsletter */}
+  <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row justify-center gap-12 border-b border-[#E6E6E6] pb-8">
     
-    {/* 🔵 Logo + About + Social Icons */}
-    <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-4">
+    {/* 🔵 Logo + About + Socials */}
+    <div className="w-full lg:max-w-md flex flex-col items-center lg:items-start text-center lg:text-left gap-4">
       <Image
         src="/logo.png"
         alt="Flyawoof Logo"
@@ -600,7 +599,7 @@ export default function Home() {
         height={55}
         className="object-contain hover:scale-105 transition-transform duration-300"
       />
-      <p className="text-white/75 text-sm leading-snug max-w-md font-light">
+      <p className="text-[#555] text-sm leading-snug font-light">
         Flyawoof is your passport to the skies — unlocking global flight deals, elite carriers, and seamless bookings. From Lagos to London, we fly with flair.
       </p>
       <div className="flex justify-center lg:justify-start gap-4 mt-2">
@@ -608,7 +607,7 @@ export default function Home() {
           <a
             key={icon}
             href="#"
-            className="text-white/70 hover:text-[#00AEEF] text-xl transition-all hover:scale-110"
+            className="text-[#666] hover:text-[#00AEEF] text-xl transition hover:scale-110"
             aria-label={`Flyawoof on ${icon}`}
           >
             <i className={`ri-${icon}-fill`}></i>
@@ -618,7 +617,7 @@ export default function Home() {
     </div>
 
     {/* 📨 Newsletter Signup */}
-    <div className="bg-white border border-[#00AEEF] rounded-lg shadow-md p-6 w-full max-w-xl mx-auto lg:mx-0">
+    <div className="w-full lg:max-w-xl bg-white border border-[#00AEEF] rounded-lg shadow-md p-6">
       <h3 className="text-lg sm:text-xl font-semibold mb-3 text-[#003C3C]">
         Join Our Newsletter
       </h3>
@@ -636,11 +635,11 @@ export default function Home() {
           name="EMAIL"
           required
           placeholder="Your email address"
-          className="w-full px-4 py-2 rounded-md bg-white text-black text-sm border border-[#00AEEF] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#00AEEF] transition-all"
+          className="w-full px-4 py-2 rounded-md bg-white text-black text-sm border border-[#00AEEF] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#00AEEF] transition"
         />
         <button
           type="submit"
-          className="bg-[#00AEEF] hover:bg-[#008CC2] px-5 py-2 rounded-md text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all"
+          className="bg-[#00AEEF] hover:bg-[#008CC2] px-5 py-2 rounded-md text-sm font-semibold text-white shadow-md hover:shadow-lg transition"
         >
           Subscribe
         </button>
@@ -651,8 +650,8 @@ export default function Home() {
     </div>
   </div>
 
-  {/* 📦 Footer Links */}
-  <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+  {/* 📦 Footer Links + Address */}
+  <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pt-10">
     {[
       {
         title: "Continents We Cover",
@@ -665,24 +664,30 @@ export default function Home() {
       {
         title: "About Flyawoof",
         items: ["Who we are", "How we work", "Contact us", "Terms & Conditions"]
+      },
+      {
+        title: "Our Office",
+        items: [
+          "1st floor",
+          "North Westgate House",
+          "Harlow Essex",
+          "CM20 1YS"
+        ]
       }
     ].map(({ title, items }) => (
       <div key={title}>
         <h3 className="text-lg font-semibold mb-4 text-[#00AEEF]">{title}</h3>
-        <ul className="text-sm space-y-2 text-white/90">
+        <ul className="text-sm space-y-2 text-[#333]">
           {items.map((item) => (
-            <li key={item} className="hover:underline cursor-pointer transition-all">{item}</li>
+            <li key={item}>{item}</li>
           ))}
         </ul>
       </div>
     ))}
-
-    {/* Empty slot (optional or use for future links) */}
-    <div />
   </div>
 
   {/* 🔒 Footer Copyright */}
-  <div className="relative z-10 text-center text-xs text-white/60 border-t border-white/10 pt-6 mt-10 tracking-wide">
+  <div className="relative z-10 text-center text-xs text-[#666] border-t border-[#E6E6E6] pt-6 mt-10 tracking-wide">
     © 2025 Flyawoof. All rights reserved.
   </div>
 </footer>
@@ -690,7 +695,7 @@ export default function Home() {
 {/* ☝️ Back to Top Button */}
 <a
   href="#"
-  className="fixed bottom-6 left-6 z-50 bg-[#00AEEF] hover:bg-[#008CC2] text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+  className="fixed bottom-6 left-6 z-50 bg-[#00AEEF] hover:bg-[#008CC2] text-white p-3 rounded-full shadow-lg transition duration-300 hover:scale-105"
   aria-label="Back to top"
 >
   <i className="ri-arrow-up-line text-xl"></i>
