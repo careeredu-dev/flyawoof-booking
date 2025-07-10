@@ -1,4 +1,5 @@
 "use client";
+import TypingStatus from "@/components/TypingStatus";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
@@ -80,11 +81,24 @@ export default function Home() {
 
       {/* 🚀 Continue Button */}
       <button
-        onClick={() => setShowCurrencyModal(false)}
-        className="w-full bg-[#00AEEF] hover:bg-[#0099cc] text-white font-semibold py-3 rounded-full shadow-md transition-all"
-      >
-        Continue
-      </button>
+  disabled={!selectedCurrency}
+  onClick={() => {
+    if (selectedCurrency) {
+      setShowCurrencyModal(false);
+      setShowIframe(true);
+    } else {
+      alert("Please select a currency before continuing.");
+    }
+  }}
+  className={`w-full py-3 rounded-full font-semibold transition-all ${
+    selectedCurrency
+      ? 'bg-[#00AEEF] hover:bg-[#0099cc] text-white shadow-md'
+      : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+  }`}
+>
+  Continue
+</button>
+
     </div>
   </div>
 )}
@@ -106,13 +120,12 @@ export default function Home() {
               &times;
             </button>
             {!iframeLoaded && (
-              <div className="absolute inset-0 bg-white flex flex-col items-center justify-center z-10 text-[#00AEEF]">
-                <div className="w-12 h-12 border-4 border-[#00AEEF] border-t-transparent rounded-full animate-spin mb-4" />
-                <p className="text-base sm:text-lg font-medium animate-pulse">
-                  Connecting to server...
-                </p>
-              </div>
-            )}
+  <div className="absolute inset-0 bg-white flex flex-col items-center justify-center z-10 text-[#00AEEF]">
+    <div className="w-12 h-12 border-4 border-[#00AEEF] border-t-transparent rounded-full animate-spin mb-4" />
+    <TypingStatus />
+  </div>
+)}
+
             <iframe
               src="https://www.travelstart.com.ng"
               loading="lazy"
@@ -225,8 +238,9 @@ export default function Home() {
 <section id="offers" className="bg-white py-16 px-4 sm:px-6 lg:px-8">
   <div className="max-w-7xl mx-auto text-center mb-14">
     <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C]">
-      ✨ Exclusive Flight Deals Just for You
-    </h2>
+  ✨ Exclusive <span className="text-[#00AEEF]">Flight Deals</span> Just for You
+</h2>
+
     <p className="mt-2 text-base sm:text-lg text-[#005f5f]">
       Premium destinations at unbeatable rates — limited time only.
     </p>
@@ -312,8 +326,9 @@ export default function Home() {
 <section id="testimonials" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#E8FBFF] to-white">
   <div className="max-w-7xl mx-auto text-center mb-14">
     <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C]">
-      What Our Travelers Are Saying
-    </h2>
+  What Our <span className="text-[#00AEEF]">Travelers Are Saying</span>
+</h2>
+
     <p className="mt-2 text-base sm:text-lg text-[#005f5f]">
       Real reviews from smart explorers who booked with Flyawoof.
     </p>
@@ -382,8 +397,9 @@ export default function Home() {
 <section id="why" className="bg-[#F9FEFF] py-20 px-4 sm:px-6 lg:px-8">
   <div className="max-w-7xl mx-auto text-center mb-14">
     <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C]">
-      Why Choose Flyawoof?
-    </h2>
+  Why Choose <span className="text-[#00AEEF]">Flyawoof</span>?
+</h2>
+
     <p className="mt-2 text-base sm:text-lg text-[#005f5f]">
       Not just booking — this is smarter, faster, friendlier travel.
     </p>
@@ -436,9 +452,10 @@ export default function Home() {
 */}
 <section id="how-to-book" className="bg-gradient-to-b from-[#F9FEFF] to-white py-20 px-4 sm:px-6 lg:px-8">
   <div className="max-w-7xl mx-auto text-center mb-16">
-    <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C]">
-      How to Book a Flight with Flyawoof
-    </h2>
+   <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C]">
+  How to Book a Flight with <span className="text-[#00AEEF]">Flyawoof</span>
+</h2>
+
     <p className="mt-2 text-base sm:text-lg text-[#005f5f]">
       Just 6 easy steps to secure your next destination — fast, safe, seamless.
     </p>
@@ -494,63 +511,82 @@ export default function Home() {
   Optimized mobile layout: image placed between text and badges
   ===============================
 */}
-<section id="download-app" className="bg-gradient-to-b from-white to-[#F9FEFF] py-20 px-4 sm:px-6 lg:px-8">
-  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
-    
-    {/* 📝 Right: Text + Image + Badges (shared on mobile) */}
-    <div className="w-full lg:w-1/2 text-center lg:text-left animate-fadeUp">
+<section
+  id="download-app"
+  className="relative bg-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+>
+  {/* 🪞 Gradient Background */}
+  <div className="absolute inset-0 bg-gradient-to-b from-[#F9FEFF] via-white to-[#F0FCFF] z-0"></div>
 
-      {/* ✏️ Heading + Description */}
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C] mb-4">
-        Book, Track & Travel<br className="hidden sm:block" /> Anytime, Anywhere
+  <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-14">
+
+    {/* 📄 Right: Text & Buttons */}
+    <div className="w-full lg:w-[45%] text-center lg:text-left animate-fadeUp">
+
+      {/* 🌟 Tagline */}
+      <p className="text-[#00AEEF] font-medium tracking-widest uppercase mb-4">
+        Your Travel Command Center
+      </p>
+
+      {/* ✏️ Heading */}
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C] mb-4 leading-tight">
+        <span className="text-[#00AEEF]">Book, Track & Travel</span><br className="hidden sm:block" />
+        Anytime, Anywhere
       </h2>
-      <p className="text-base sm:text-lg text-[#005f5f] mb-6">
+
+      {/* 💬 Description */}
+      <p className="text-base sm:text-lg text-[#005f5f] mb-6 leading-relaxed tracking-wide">
         Download the Flyawoof mobile app to book flights, manage your travel, get instant updates,
         and even receive your ticket via WhatsApp — all from your pocket.
       </p>
 
-      {/* 📱 Image (visible first on mobile) */}
+      {/* 📱 Mobile Image (only on small screens) */}
       <div className="block lg:hidden mb-6">
         <Image
           src="/screenshot.png"
           alt="Flyawoof Mobile App Preview"
-          width={500}
-          height={600}
-          className="w-full max-w-sm mx-auto rounded-xl shadow-xl"
+          width={400}
+          height={550}
+          className="w-full max-w-[400px] mx-auto rounded-xl shadow-xl"
         />
       </div>
 
-      {/* 🛍️ Store Badges */}
+      {/* 🛍️ Store Buttons */}
       <div className="flex justify-center lg:justify-start gap-4">
-        <Image
-          src="/google-play.png"
-          alt="Download on Google Play"
-          width={160}
-          height={48}
-          className="cursor-pointer hover:scale-105 transition-all duration-200"
-        />
-        <Image
-          src="/app-store.png"
-          alt="Download on App Store"
-          width={160}
-          height={48}
-          className="cursor-pointer hover:scale-105 transition-all duration-200"
-        />
+        <div className="relative group">
+          <Image
+            src="/google-play.png"
+            alt="Download on Google Play"
+            width={160}
+            height={48}
+            className="cursor-pointer transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(0,174,239,0.4)]"
+          />
+        </div>
+        <div className="relative group">
+          <Image
+            src="/app-store.png"
+            alt="Download on App Store"
+            width={160}
+            height={48}
+            className="cursor-pointer transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(0,174,239,0.4)]"
+          />
+        </div>
       </div>
     </div>
 
-    {/* 📱 Left: Screenshot image (desktop only) */}
-    <div className="hidden lg:block w-full lg:w-1/2 animate-fadeUp delay-100">
+    {/* ✨ Left: Desktop Image */}
+    <div className="hidden lg:flex w-full lg:w-[55%] justify-center animate-fadeUp delay-100">
       <Image
         src="/screenshot.png"
         alt="Flyawoof Mobile App Preview"
-        width={500}
-        height={600}
-        className="w-full max-w-sm mx-auto rounded-xl shadow-xl"
+        width={600}
+        height={700}
+        className="w-full max-w-[600px] h-auto rounded-xl shadow-[0_10px_40px_rgba(0,174,239,0.3)] animate-floatSlow"
       />
     </div>
   </div>
 </section>
+
 {/* ===== End of Download App Section ===== */}
 {/* ===============================
 🕊 Decorative Wave Divider Above Footer
