@@ -144,7 +144,8 @@ export default function Home() {
 
         {/* 🍃 Hero Section */}
         {/* 🍃 Hero Section */}
-<section className="w-full relative bg-[#E6FFF8] overflow-hidden min-h-screen pt-20 sm:pt-24">
+<section className="w-full relative bg-gradient-to-br from-[#003C3C] via-[#005F5F] to-[#00AEEF]/90 pt-16 sm:pt-20">
+
 
   {/* ☁️ Floating Clouds */}
   <div className="absolute top-10 left-[-100px] w-40 h-24 bg-white opacity-50 rounded-full blur-2xl animate-cloudFloat" />
@@ -173,12 +174,14 @@ export default function Home() {
 
       {/* 🌍 Text Left */}
       <div className="w-full md:w-1/2 text-center md:text-left">
-        <h1 className="text-4xl sm:text-6xl font-extrabold leading-tight mb-4 animate-fadeUp tracking-tight">
-          Explore the World<br />
-          with <span className="text-[#00AEEF]">Flyawoof</span><br />
-          Today
-        </h1>
-        <p className="text-base sm:text-lg text-[#005f5f] mb-6 animate-fadeUp">
+      <h1 className="text-4xl sm:text-6xl font-extrabold leading-tight mb-4 animate-fadeUp tracking-tight text-white drop-shadow-lg">
+  Explore the World<br />
+  with <span className="text-[#00AEEF]">Flyawoof</span><br />
+  Today
+</h1>
+
+
+        <p className="text-base sm:text-lg text-white/80 mb-6 animate-fadeUp">
           Book smarter. Travel lighter.<br />
           Discover easier.
         </p>
