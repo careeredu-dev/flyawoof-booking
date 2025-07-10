@@ -582,14 +582,12 @@ export default function Home() {
   </svg>
 </div>
 
-
 {/* ===============================
 🛬 Flyawoof Footer Start
 =============================== */}
-<footer className="relative bg-white text-[#003C3C] pt-14 px-6 sm:px-10 pb-10 overflow-hidden">
-  {/* 🧭 Top Section: Logo + Newsletter */}
+<footer className="relative bg-[#F9FEFF] text-[#003C3C] pt-14 px-6 sm:px-10 pb-10 overflow-hidden">
   <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:flex-row justify-center gap-12 border-b border-[#E6E6E6] pb-8">
-    
+
     {/* 🔵 Logo + About + Socials */}
     <div className="w-full lg:max-w-md flex flex-col items-center lg:items-start text-center lg:text-left gap-4">
       <Image
@@ -650,7 +648,7 @@ export default function Home() {
     </div>
   </div>
 
-  {/* 📦 Footer Links + Address */}
+  {/* 📦 Footer Navigation Links + Office Address */}
   <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pt-10">
     {[
       {
