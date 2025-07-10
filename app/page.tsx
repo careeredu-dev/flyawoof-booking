@@ -144,7 +144,7 @@ export default function Home() {
 
         {/* 🍃 Hero Section */}
         {/* 🍃 Hero Section */}
-<section className="w-full relative bg-gradient-to-br from-[#003C3C] via-[#005F5F] to-[#00AEEF]/90 pt-16 sm:pt-20">
+<section className="w-full max-w-[100vw] overflow-x-hidden relative bg-gradient-to-br from-[#003C3C] via-[#005F5F] to-[#00AEEF]/90 pt-12 sm:pt-20">
 
 
   {/* ☁️ Floating Clouds */}
