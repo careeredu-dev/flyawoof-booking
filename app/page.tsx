@@ -585,86 +585,62 @@ export default function Home() {
 {/* ===============================
 🛬 Flyawoof Footer Start
 =============================== */}
-<footer className="bg-[#012727] text-white pt-14 px-6 sm:px-10 pb-10">
+<footer className="relative bg-[#012727] text-white pt-14 px-6 sm:px-10 pb-10 overflow-hidden">
+  {/* 🌄 Background Gradient */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#012727] via-[#013B3B] to-[#005f5f] opacity-80 z-0 pointer-events-none"></div>
 
-  {/* 🔵 Logo & Social Icons */}
-  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 mb-12 border-b border-white/10 pb-8">
-    <div className="flex items-center gap-4">
+  <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 mb-12 border-b border-white/10 pb-8">
+    
+    {/* 🔵 Logo + About + Social Icons */}
+    <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-4">
       <Image
         src="/logo.png"
         alt="Flyawoof Logo"
-        width={150}
-        height={40}
-        className="object-contain"
+        width={200}
+        height={55}
+        className="object-contain hover:scale-105 transition-transform duration-300"
       />
-      <div className="flex gap-4 ml-2">
-        {[
-          { icon: "instagram", href: "#" },
-          { icon: "twitter", href: "#" },
-          { icon: "facebook", href: "#" },
-          { icon: "linkedin", href: "#" }
-        ].map(({ icon, href }) => (
-          <a key={icon} href={href} className="text-white/70 hover:text-white text-xl transition-all">
+      <p className="text-white/75 text-sm leading-snug max-w-md font-light">
+        Flyawoof is your passport to the skies — unlocking global flight deals, elite carriers, and seamless bookings. From Lagos to London, we fly with flair.
+      </p>
+      <div className="flex justify-center lg:justify-start gap-4 mt-2">
+        {["instagram", "twitter", "facebook", "linkedin"].map((icon) => (
+          <a
+            key={icon}
+            href="#"
+            className="text-white/70 hover:text-[#00AEEF] text-xl transition-all hover:scale-110"
+            aria-label={`Flyawoof on ${icon}`}
+          >
             <i className={`ri-${icon}-fill`}></i>
           </a>
         ))}
       </div>
     </div>
-  </div>
 
-  {/* 📦 Footer Columns */}
-  <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-    <div>
-      <h3 className="text-lg font-semibold mb-4">Continents We Cover</h3>
-      <ul className="text-sm space-y-2 text-white/90">
-        <li>Africa</li>
-        <li>Europe</li>
-        <li>Asia</li>
-        <li>North America</li>
-        <li>Middle East</li>
-      </ul>
-    </div>
-    <div>
-      <h3 className="text-lg font-semibold mb-4">Airline Partners</h3>
-      <ul className="text-sm space-y-2 text-white/90">
-        <li>British Airways</li>
-        <li>Delta Airlines</li>
-        <li>Emirates</li>
-        <li>Qatar Airways</li>
-        <li>Air France</li>
-      </ul>
-    </div>
-    <div>
-      <h3 className="text-lg font-semibold mb-4">About Flyawoof</h3>
-      <ul className="text-sm space-y-2 text-white/90">
-        <li>Who we are</li>
-        <li>How we work</li>
-        <li>Contact us</li>
-        <li>Terms & Conditions</li>
-      </ul>
-    </div>
-    <div>
-      <h3 className="text-lg font-semibold mb-4">Join Our Newsletter</h3>
-      <p className="text-sm text-white/90 mb-3">
-        Get deals, updates, and travel inspiration in your inbox.
+    {/* 📨 Newsletter Signup */}
+    <div className="bg-white border border-[#00AEEF] rounded-lg shadow-md p-6 w-full max-w-xl mx-auto lg:mx-0">
+      <h3 className="text-lg sm:text-xl font-semibold mb-3 text-[#003C3C]">
+        Join Our Newsletter
+      </h3>
+      <p className="text-sm text-[#005f5f] mb-4 leading-relaxed">
+        Deals, travel inspiration, and Flyawoof insider updates — delivered monthly.
       </p>
       <form
         action="https://careeredu.us21.list-manage.com/subscribe/post?u=c37a6e24f0352efab31c71d1a&amp;id=0ef6369907&amp;f_id=00c941e6f0"
         method="post"
         target="_blank"
-        className="flex flex-col sm:flex-row items-center gap-2"
+        className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3 w-full"
       >
         <input
           type="email"
           name="EMAIL"
-          id="mce-EMAIL"
           required
-          placeholder="Enter your email"
-          className="w-full px-4 py-2 rounded-md text-black text-sm focus:outline-none"
+          placeholder="Your email address"
+          className="w-full px-4 py-2 rounded-md bg-white text-black text-sm border border-[#00AEEF] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#00AEEF] transition-all"
         />
         <button
           type="submit"
-          className="bg-[#00AEEF] hover:bg-[#008CC2] transition-all px-5 py-2 rounded-md text-sm font-medium"
+          className="bg-[#00AEEF] hover:bg-[#008CC2] px-5 py-2 rounded-md text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all"
         >
           Subscribe
         </button>
@@ -675,17 +651,46 @@ export default function Home() {
     </div>
   </div>
 
-  {/* 🔒 Rights Reserved */}
-  <div className="text-center text-xs text-white/60 border-t border-white/10 pt-6 mt-4">
+  {/* 📦 Footer Links */}
+  <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    {[
+      {
+        title: "Continents We Cover",
+        items: ["Africa", "Europe", "Asia", "North America", "Middle East"]
+      },
+      {
+        title: "Airline Partners",
+        items: ["British Airways", "Delta Airlines", "Emirates", "Qatar Airways", "Air France"]
+      },
+      {
+        title: "About Flyawoof",
+        items: ["Who we are", "How we work", "Contact us", "Terms & Conditions"]
+      }
+    ].map(({ title, items }) => (
+      <div key={title}>
+        <h3 className="text-lg font-semibold mb-4 text-[#00AEEF]">{title}</h3>
+        <ul className="text-sm space-y-2 text-white/90">
+          {items.map((item) => (
+            <li key={item} className="hover:underline cursor-pointer transition-all">{item}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+
+    {/* Empty slot (optional or use for future links) */}
+    <div />
+  </div>
+
+  {/* 🔒 Footer Copyright */}
+  <div className="relative z-10 text-center text-xs text-white/60 border-t border-white/10 pt-6 mt-10 tracking-wide">
     © 2025 Flyawoof. All rights reserved.
   </div>
 </footer>
-{/* ===== End of Footer ===== */}
 
-{/* 🔝 Back to Top */}
+{/* ☝️ Back to Top Button */}
 <a
   href="#"
-  className="fixed bottom-6 left-6 z-50 bg-[#00AEEF] hover:bg-[#008CC2] text-white p-3 rounded-full shadow-md transition-all"
+  className="fixed bottom-6 left-6 z-50 bg-[#00AEEF] hover:bg-[#008CC2] text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
   aria-label="Back to top"
 >
   <i className="ri-arrow-up-line text-xl"></i>
