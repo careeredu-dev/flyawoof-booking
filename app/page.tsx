@@ -153,15 +153,58 @@ export default function Home() {
 
 
 
-        {/* 🍃 Hero Section */}
-        {/* 🍃 Hero Section */}
-<section className="w-full pt-20 pb-16 bg-[#003C3C] md:bg-gradient-to-r md:from-[#003C3C] md:via-[#005F5F] md:to-[#00AEEF]/90 text-white font-[Geist] relative overflow-hidden">
 
-  {/* 🔒 Background Reinforcement */}
-  <div className="absolute inset-0 bg-[#003C3C] z-0" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* 🍃 Hero Section */}
+<section className="w-full pt-20 pb-16 bg-[#003C3C] text-white font-[Geist] relative overflow-hidden">
+ <svg
+  viewBox="0 0 500 150"
+  preserveAspectRatio="none"
+  className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-14 w-[500px] h-[150px] z-10 pointer-events-none animate-routePulse"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M10,120 C150,10 350,200 490,80"
+    stroke="#00AEEF"
+    strokeWidth="3"
+    strokeLinecap="round"
+    fill="none"
+    strokeDasharray="8 5"
+  />
+</svg>
+
+
+
+  {/* 🗺️ World Map Background Layer */}
+  <div
+    className="absolute inset-0 pointer-events-none z-0"
+    style={{
+      backgroundImage: "url('/world-map.png')",
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      opacity: 0.15,
+    }}
+  />
 
   {/* 🌊 SVG Wave — Deep Blue for Premium Feel */}
-  <div className="hidden md:block absolute inset-0 z-0 overflow-hidden pointer-events-none">
+  <div className="hidden md:block absolute inset-0 z-10 overflow-hidden pointer-events-none">
     <svg
       className="w-full h-full"
       viewBox="0 0 1440 320"
@@ -177,15 +220,17 @@ export default function Home() {
   </div>
 
   {/* 🌍 Hero Content */}
-  <div className="relative z-10 px-4 py-10 sm:py-16">
+  <div className="relative z-20 px-4 py-10 sm:py-16">
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
       {/* ✍️ Text Section */}
-      <div className="w-full md:w-1/2 text-center md:text-left bg-[#003C3C]">
+      <div className="w-full md:w-1/2 text-center md:text-left">
         <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-4 tracking-tight text-white">
           Explore the World<br />
-          with <span className="text-[#00AEEF] font-semibold">Flyawoof</span><br />
-          Today
+          with <span className="text-[#00AEEF] font-extrabold tracking-wide drop-shadow-md">Flyawoof</span><br />
+          <span className="bg-gradient-to-r from-[#00FFD1] via-[#00AEEF] to-[#0077FF] bg-clip-text text-transparent font-extrabold tracking-wide drop-shadow-md">
+            Today
+          </span>
         </h1>
 
         <p className="text-base sm:text-lg text-white/80 mb-6">
@@ -203,14 +248,14 @@ export default function Home() {
         </button>
       </div>
 
-      {/* 🎟️ Image Section with Your Ticket */}
-      <div className="w-full md:w-1/2 flex justify-center items-center bg-[#003C3C]">
+      {/* 🎟️ Ticket Image Section */}
+      <div className="w-full md:w-1/2 flex justify-center items-center">
         <Image
           src="/plane.png"
           alt="Airplane ticket"
           width={500}
           height={400}
-          className="w-full h-auto max-w-[90%] sm:max-w-md md:max-w-full"
+          className="w-full h-auto max-w-[90%] sm:max-w-md md:max-w-full rounded-xl shadow-2xl border border-white/10"
           priority
         />
       </div>
@@ -218,6 +263,11 @@ export default function Home() {
     </div>
   </div>
 </section>
+
+
+
+
+
 
 
 
