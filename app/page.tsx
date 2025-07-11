@@ -270,7 +270,7 @@ export default function Home() {
         className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-medium text-sm hover:bg-[#008CC2] transition-all"
       >
         <span className="inline-flex items-center justify-center gap-2">
-          Book Now <span className="animate-swing">✈️</span>
+          Book Now <span className="animate-swing"></span>
         </span>
       </button>
     </div>
@@ -287,7 +287,7 @@ export default function Home() {
         className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-medium text-sm hover:bg-[#008CC2] transition-all"
       >
         <span className="inline-flex items-center justify-center gap-2">
-          Book Now <span className="animate-swing">✈️</span>
+          Book Now <span className="animate-swing"></span>
         </span>
       </button>
     </div>
@@ -304,7 +304,7 @@ export default function Home() {
         className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-medium text-sm hover:bg-[#008CC2] transition-all"
       >
         <span className="inline-flex items-center justify-center gap-2">
-          Book Now <span className="animate-swing">✈️</span>
+          Book Now <span className="animate-swing"></span>
         </span>
       </button>
     </div>
@@ -321,7 +321,7 @@ export default function Home() {
         className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-medium text-sm hover:bg-[#008CC2] transition-all"
       >
         <span className="inline-flex items-center justify-center gap-2">
-          Book Now <span className="animate-swing">✈️</span>
+          Book Now <span className="animate-swing"></span>
         </span>
       </button>
     </div>
