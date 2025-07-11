@@ -5,10 +5,7 @@ import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Head from "next/head";
 import confetti from "canvas-confetti";
-
 import 'remixicon/fonts/remixicon.css';
-
-
 
 export default function Home() {
   const [showIframe, setShowIframe] = useState(false);
@@ -30,120 +27,155 @@ export default function Home() {
     setShowIframe(true);
   };
 
-  return (
-     <>
-    <Head>
-      <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-        rel="stylesheet"
+  // ✅ Flyawoof Loader Component (Branded)
+  const FlyawoofLoader = () => (
+    <div className="absolute inset-0 bg-white flex flex-col items-center justify-center z-10 text-[#00AEEF]">
+      <Image
+        src="/logo.png"
+        alt="Flyawoof Logo"
+        width={80}
+        height={80}
+        className="animate-pulse mb-4"
       />
-    </Head>
-    
-      {/* 🌍 Currency Selector Modal - Ultra Premium */}
-{showCurrencyModal && (
-  <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center px-4 sm:px-0">
-    <div className="animate-fadeInScale bg-white/10 border border-white/20 backdrop-blur-xl rounded-2xl shadow-2xl max-w-md w-full p-8 relative text-white text-center">
-
-      {/* 🔘 Close button (optional) */}
-      <button
-        onClick={() => setShowCurrencyModal(false)}
-        className="absolute top-4 right-4 text-white/70 hover:text-white text-lg"
-        aria-label="Close modal"
-      >
-        <i className="ri-close-line"></i>
-      </button>
-
-      {/* 💎 Modal Content */}
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold mb-2 flex items-center justify-center gap-2">
-          <i className="ri-money-dollar-circle-line text-[#00AEEF] text-3xl"></i>
-          Choose Currency
-        </h2>
-        <p className="text-white/70 text-sm">
-          Set your preferred currency for flight prices
-        </p>
-      </div>
-
-      {/* 💸 Currency Options */}
-      <div className="flex justify-center gap-4 mb-6">
-        {['NGN', 'USD', 'GBP'].map((cur) => (
-          <button
-            key={cur}
-            onClick={() => handleCurrencySelect(cur)}
-            className={`px-5 py-2 rounded-full text-sm font-medium transition-all border ${
-              selectedCurrency === cur
-                ? 'bg-[#00AEEF] border-[#00AEEF] text-white shadow-lg'
-                : 'bg-white/10 border-white/30 text-white/80 hover:bg-white/20'
-            }`}
-          >
-            {cur}
-          </button>
-        ))}
-      </div>
-
-      {/* 🚀 Continue Button */}
-      <button
-  disabled={!selectedCurrency}
-  onClick={() => {
-    if (selectedCurrency) {
-      setShowCurrencyModal(false);
-      setShowIframe(true);
-    } else {
-      alert("Please select a currency before continuing.");
-    }
-  }}
-  className={`w-full py-3 rounded-full font-semibold transition-all ${
-    selectedCurrency
-      ? 'bg-[#00AEEF] hover:bg-[#0099cc] text-white shadow-md'
-      : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-  }`}
->
-  Continue
-</button>
-
+      <p className="text-sm font-medium text-[#003C3C] mb-3 text-center">
+        Preparing your smooth Flyawoof booking experience...
+      </p>
+      <div className="w-6 h-6 border-4 border-[#00AEEF] border-t-transparent rounded-full animate-spin" />
     </div>
-  </div>
-)}
+  );
 
- <Head>
-      <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-        rel="stylesheet"
-      />
-    </Head>
-      {/* 🪟 Booking Iframe Modal */}
-      {showIframe && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">
-          <div className="bg-white rounded-lg shadow-xl w-[95%] max-w-[1080px] max-h-[90vh] relative overflow-hidden">
+  return (
+    <>
+      <Head>
+        <link
+          href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+          rel="stylesheet"
+        />
+      </Head>
+
+      {/* 🌍 Currency Selector Modal */}
+      {showCurrencyModal && (
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center px-4 sm:px-0">
+          <div className="animate-fadeInScale bg-white/10 border border-white/20 backdrop-blur-xl rounded-2xl shadow-2xl max-w-md w-full p-8 relative text-white text-center">
+
+            {/* ❌ Close Button */}
             <button
-              onClick={() => setShowIframe(false)}
-              className="absolute top-3 right-4 text-gray-600 hover:text-red-500 text-2xl font-bold z-10"
+              onClick={() => setShowCurrencyModal(false)}
+              className="absolute top-4 right-4 text-white/70 hover:text-white text-lg"
+              aria-label="Close modal"
             >
-              &times;
+              <i className="ri-close-line"></i>
             </button>
-            {!iframeLoaded && (
-  <div className="absolute inset-0 bg-white flex flex-col items-center justify-center z-10 text-[#00AEEF]">
-    <div className="w-12 h-12 border-4 border-[#00AEEF] border-t-transparent rounded-full animate-spin mb-4" />
-    <TypingStatus />
-  </div>
-)}
 
-            <iframe
-              src="https://www.travelstart.com.ng"
-              loading="lazy"
-              onLoad={() => setIframeLoaded(true)}
-              className="w-full h-[90vh] border-none"
-            />
+            {/* 💰 Currency Modal Content */}
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold mb-2 flex items-center justify-center gap-2">
+                <i className="ri-money-dollar-circle-line text-[#00AEEF] text-3xl"></i>
+                Choose Currency
+              </h2>
+              <p className="text-white/70 text-sm">
+                Set your preferred currency for flight prices
+              </p>
+            </div>
+
+            {/* 💸 Currency Options */}
+            <div className="flex justify-center gap-4 mb-6">
+              {['NGN', 'USD', 'GBP'].map((cur) => (
+                <button
+                  key={cur}
+                  onClick={() => handleCurrencySelect(cur)}
+                  className={`px-5 py-2 rounded-full text-sm font-medium transition-all border ${
+                    selectedCurrency === cur
+                      ? 'bg-[#00AEEF] border-[#00AEEF] text-white shadow-lg'
+                      : 'bg-white/10 border-white/30 text-white/80 hover:bg-white/20'
+                  }`}
+                >
+                  {cur}
+                </button>
+              ))}
+            </div>
+
+            {/* 🚀 Continue Button */}
+            <button
+              disabled={!selectedCurrency}
+              onClick={() => {
+                if (selectedCurrency) {
+                  setShowCurrencyModal(false);
+                  setShowIframe(true);
+                } else {
+                  alert("Please select a currency before continuing.");
+                }
+              }}
+              className={`w-full py-3 rounded-full font-semibold transition-all ${
+                selectedCurrency
+                  ? 'bg-[#00AEEF] hover:bg-[#0099cc] text-white shadow-md'
+                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              }`}
+            >
+              Continue
+            </button>
           </div>
         </div>
       )}
 
-      {/* 🌍 Page Content */}
+
+      
+
+     {/* 🪟 Booking Iframe Modal with Branded Loader */}
+{showIframe && (
+  <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">
+    <div className="bg-white rounded-lg shadow-xl w-[95%] max-w-[1080px] max-h-[90vh] relative overflow-hidden">
+
+      {/* ❌ Close Button */}
+      <button
+        onClick={() => setShowIframe(false)}
+        className="absolute top-3 right-4 text-gray-600 hover:text-red-500 text-2xl font-bold z-20"
+      >
+        &times;
+      </button>
+
+      {/* ⏳ Branded Loader */}
+      <div
+        className={`absolute inset-0 flex flex-col items-center justify-center z-10 transition-opacity duration-600 bg-white ${
+          iframeLoaded ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+      >
+        <Image
+          src="/fire.png"
+          alt="Flyawoof Logo"
+          width={180}
+          height={180}
+          className="animate-pulse mb-4"
+        />
+        <p className="text-sm font-medium text-[#003C3C] mb-3 text-center">
+          Preparing your smooth Flyawoof booking experience...
+        </p>
+        <div className="w-6 h-6 border-4 border-[#00AEEF] border-t-transparent rounded-full animate-spin" />
+      </div>
+
+      {/* 🌍 Iframe Booking Form */}
+      <div className="relative bg-[#F4F8FA]">
+        <iframe
+          src="https://www.travelstart.com.ng"
+          loading="lazy"
+          onLoad={() => {
+            setTimeout(() => setIframeLoaded(true), 500); // delay to allow content paint
+          }}
+          className="w-full h-[90vh] border-none"
+        />
+      </div>
+    </div>
+  </div>
+)}
+
+
+
+
+
+           
+      {/* 🔓 Main Page Content */}
       <main className="min-h-screen bg-white font-sans scroll-smooth text-[#003C3C]">
         <Header />
-
-
-
 
 
 
