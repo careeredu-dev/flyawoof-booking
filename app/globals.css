@@ -286,3 +286,26 @@ a:hover::after {
 .animate-routePulse {
   animation: routePulse 6s ease-in-out infinite;
 }
+@keyframes dashMove {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.route-path {
+  animation: dashMove 4s ease-in-out forwards;
+}
+.route-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dashMove 4s ease-out forwards;
+}
+
+@keyframes dashMove {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

@@ -149,113 +149,70 @@ export default function Home() {
 
 
 
+{/* 🌍 Flyawoof Hero — Clean, Professional, Global */}
+<section className="w-full pt-24 pb-16 bg-[#081C24] text-white font-[Inter] relative overflow-hidden">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* 🍃 Hero Section */}
-<section className="w-full pt-20 pb-16 bg-[#003C3C] text-white font-[Geist] relative overflow-hidden">
- <svg
-  viewBox="0 0 500 150"
-  preserveAspectRatio="none"
-  className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-14 w-[500px] h-[150px] z-10 pointer-events-none animate-routePulse"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    d="M10,120 C150,10 350,200 490,80"
-    stroke="#00AEEF"
-    strokeWidth="3"
-    strokeLinecap="round"
-    fill="none"
-    strokeDasharray="8 5"
-  />
-</svg>
-
-
-
-  {/* 🗺️ World Map Background Layer */}
+  {/* 📸 Background Photo Layer (Replace with your image) */}
   <div
-    className="absolute inset-0 pointer-events-none z-0"
-    style={{
-      backgroundImage: "url('/world-map.png')",
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      opacity: 0.15,
-    }}
+    className="absolute inset-0 z-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-20 pointer-events-none"
   />
 
-  {/* 🌊 SVG Wave — Deep Blue for Premium Feel */}
-  <div className="hidden md:block absolute inset-0 z-10 overflow-hidden pointer-events-none">
-    <svg
-      className="w-full h-full"
-      viewBox="0 0 1440 320"
-      preserveAspectRatio="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fill="#005F5F"
-        fillOpacity="1"
-        d="M0,192L48,186.7C96,181,192,171,288,154.7C384,139,480,117,576,122.7C672,128,768,160,864,186.7C960,213,1056,235,1152,224C1248,213,1344,171,1392,149.3L1440,128L1440,320L0,320Z"
-      />
-    </svg>
-  </div>
+  {/* 🌍 Overlay Gradient */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#081C24] via-[#0A2F3D]/70 to-[#081C24]/90 z-0" />
 
-  {/* 🌍 Hero Content */}
-  <div className="relative z-20 px-4 py-10 sm:py-16">
-    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+  {/* 🛫 Animated Route Line */}
+  <svg
+    viewBox="0 0 500 150"
+    preserveAspectRatio="none"
+    className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-10 w-[500px] h-[150px] z-10 pointer-events-none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      className="route-path"
+      d="M10,120 C150,10 350,200 490,80"
+      stroke="#00AEEF"
+      strokeWidth={3}
+      strokeLinecap="round"
+      fill="none"
+    />
+  </svg>
 
-      {/* ✍️ Text Section */}
+  {/* 💼 Hero Content */}
+  <div className="relative z-20 px-6 sm:px-10 py-16">
+    <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+
+      {/* 📋 Text Section */}
       <div className="w-full md:w-1/2 text-center md:text-left">
-        <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-4 tracking-tight text-white">
-          Explore the World<br />
-          with <span className="text-[#00AEEF] font-extrabold tracking-wide drop-shadow-md">Flyawoof</span><br />
-          <span className="bg-gradient-to-r from-[#00FFD1] via-[#00AEEF] to-[#0077FF] bg-clip-text text-transparent font-extrabold tracking-wide drop-shadow-md">
-            Today
-          </span>
+        <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight tracking-tight mb-4 text-white">
+          Book Travel<br />
+          With <span className="text-[#00AEEF]">Confidence</span>
         </h1>
 
-        <p className="text-base sm:text-lg text-white/80 mb-6">
-          Book smarter. Travel lighter.<br />
-          Discover easier.
+        <p className="text-lg text-white/80 mb-8 leading-relaxed">
+          Trusted by thousands. Powered by smart bookings.<br />
+          Flyawoof connects you to the world — securely, seamlessly.
         </p>
 
         <button
           onClick={handleBookClick}
-          className="group relative bg-white border border-[#00AEEF] text-[#00AEEF] px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-[#00AEEF] hover:text-white transition-all"
+          className="bg-[#00AEEF] text-white px-6 py-4 rounded-full font-semibold text-lg hover:bg-[#0096c5] transition-all"
         >
-          <span className="inline-flex items-center gap-2">
-            Book a Flight <span>✈️</span>
-          </span>
+          Start Your Journey
         </button>
       </div>
 
-      {/* 🎟️ Ticket Image Section */}
-      <div className="w-full md:w-1/2 flex justify-center items-center">
+      {/* 🧍🏽‍♂️ Realistic Hero Image */}
+      <div className="w-full md:w-1/2 flex justify-center items-center relative">
+
+        {/* 💡 Soft Glow Behind Image */}
+        <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-[300px] h-[300px] bg-[#00AEEF]/15 rounded-full blur-[90px] z-0" />
+
         <Image
-          src="/plane.png"
-          alt="Airplane ticket"
-          width={500}
-          height={400}
-          className="w-full h-auto max-w-[90%] sm:max-w-md md:max-w-full rounded-xl shadow-2xl border border-white/10"
+          src="/boarding.jpg"  // Replace with realistic image of traveler or airport
+          alt="Traveler Boarding"
+          width={480}
+          height={240}
+          className="w-full h-auto rounded-xl shadow-2xl border border-white/10 z-10"
           priority
         />
       </div>
@@ -263,13 +220,6 @@ export default function Home() {
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
 
 
 
