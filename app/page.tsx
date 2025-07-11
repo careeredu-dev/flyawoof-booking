@@ -367,8 +367,8 @@ export default function Home() {
     <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-lg p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
       <Image src="/london.jpg" alt="London" width={400} height={250} className="rounded-md mb-5" />
       <h3 className="text-xl font-bold text-[#003C3C] mb-1">Lagos → London</h3>
-      <p className="text-sm text-[#007c91] mb-1">British Airways • Economy</p>
-      <p className="text-sm font-bold text-[#003C3C] mb-1">From NGN 450,000</p>
+      <p className="text-sm text-[#007c91] mb-1">Kenya Airways • Economy</p>
+      <p className="text-sm font-bold text-[#003C3C] mb-1">From NGN 710,000</p>
       <p className="text-xs text-gray-500 mb-2">Valid till Aug 30</p>
       <button
         onClick={handleBookClick}
@@ -382,8 +382,8 @@ export default function Home() {
     <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-lg p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
       <Image src="/usa.jpg" alt="New York" width={400} height={250} className="rounded-md mb-5" />
       <h3 className="text-xl font-bold text-[#003C3C] mb-1">Lagos → New York</h3>
-      <p className="text-sm text-[#007c91] mb-1">Delta Airlines • Economy</p>
-      <p className="text-sm font-bold text-[#003C3C] mb-1">From NGN 600,000</p>
+      <p className="text-sm text-[#007c91] mb-1">Rwandair Airlines • Economy</p>
+      <p className="text-sm font-bold text-[#003C3C] mb-1">From NGN 1,385,000</p>
       <p className="text-xs text-gray-500 mb-2">Valid till Sept 10</p>
       <button
         onClick={handleBookClick}
@@ -397,8 +397,8 @@ export default function Home() {
     <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-lg p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
       <Image src="/dubai.jpg" alt="Dubai" width={400} height={250} className="rounded-md mb-5" />
       <h3 className="text-xl font-bold text-[#003C3C] mb-1">Lagos → Dubai</h3>
-      <p className="text-sm text-[#007c91] mb-1">Emirates • Economy</p>
-      <p className="text-sm font-bold text-[#003C3C] mb-1">From NGN 300,000</p>
+      <p className="text-sm text-[#007c91] mb-1">Ethiopian Airlines • Economy</p>
+      <p className="text-sm font-bold text-[#003C3C] mb-1">From NGN 719,170</p>
       <p className="text-xs text-gray-500 mb-2">Valid till Sept 5</p>
       <button
         onClick={handleBookClick}
@@ -412,8 +412,8 @@ export default function Home() {
     <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-lg p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
       <Image src="/paris.jpg" alt="Paris" width={400} height={250} className="rounded-md mb-5" />
       <h3 className="text-xl font-bold text-[#003C3C] mb-1">Lagos → Paris</h3>
-      <p className="text-sm text-[#007c91] mb-1">Air France • Economy</p>
-      <p className="text-sm font-bold text-[#003C3C] mb-1">From NGN 520,000</p>
+      <p className="text-sm text-[#007c91] mb-1">Royal Air Maroc • Economy</p>
+      <p className="text-sm font-bold text-[#003C3C] mb-1">From NGN 1,070,000</p>
       <p className="text-xs text-gray-500 mb-2">Valid till Aug 25</p>
       <button
         onClick={handleBookClick}
