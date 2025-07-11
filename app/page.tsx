@@ -148,7 +148,7 @@ export default function Home() {
 
 
 
-
+<section className="block md:hidden">
 {/* 🌍 Flyawoof Hero — Clean, Professional, Global */}
 <section className="w-full pt-24 pb-16 bg-[#081C24] text-white font-[Inter] relative overflow-hidden">
 
@@ -220,6 +220,112 @@ export default function Home() {
     </div>
   </div>
 </section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section className="hidden md:block">
+{/* 🌍 Flyawoof Hero Section */}
+<section className="w-full pt-16 pb-16 bg-[#081C24] text-white font-[Inter] relative overflow-hidden">
+
+  {/* 📸 Background Photo Layer */}
+  <div
+    className="absolute inset-0 z-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-20 pointer-events-none"
+  />
+
+  {/* 🌫 Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#081C24] via-[#0A2F3D]/70 to-[#081C24]/90 z-0" />
+
+  {/* ✈️ Animated Route Line */}
+  <svg
+    viewBox="0 0 500 150"
+    preserveAspectRatio="none"
+    className="absolute top-4 left-1/2 transform -translate-x-1/2 w-[500px] h-[150px] z-10 pointer-events-none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      className="route-path"
+      d="M10,120 C150,10 350,200 490,80"
+      stroke="#00AEEF"
+      strokeWidth={3}
+      strokeLinecap="round"
+      fill="none"
+    />
+  </svg>
+
+  {/* 💼 Hero Content */}
+  <div className="relative z-20 px-6 sm:px-10 py-10">
+    <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10">
+
+      {/* ✍️ Text Section */}
+      <div className="w-full md:w-1/2 text-center md:text-left pt-2 sm:pt-4">
+        <h1 className="text-6xl sm:text-7xl font-extrabold leading-tight tracking-tight mb-4 text-white">
+          Book Travel<br />
+          With <span className="text-[#00AEEF]">Confidence</span>
+        </h1>
+
+        <p className="text-lg sm:text-xl text-white/80 mb-8 leading-relaxed">
+          Trusted by thousands. Powered by smart bookings.<br />
+          Flyawoof connects you to the world — securely, seamlessly.
+        </p>
+
+        <button
+          onClick={handleBookClick}
+          className="bg-[#00AEEF] text-white px-6 py-4 rounded-full font-semibold text-lg hover:bg-[#0096c5] transition-all"
+        >
+          Start Your Journey
+        </button>
+      </div>
+
+      {/* 👤 Hero Image Section */}
+      <div className="w-full md:w-1/2 flex justify-center items-center relative">
+
+        {/* 💡 Glow Behind Image */}
+        <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-[300px] h-[300px] bg-[#00AEEF]/15 rounded-full blur-[90px] z-0" />
+
+        <Image
+          src="/desk.png"
+          alt="Traveler Boarding"
+          width={480}
+          height={480}
+          className="max-h-[440px] w-full h-auto object-contain rounded-xl shadow-2xl border border-white/10 z-10"
+          priority
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
