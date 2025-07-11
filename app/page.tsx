@@ -249,84 +249,76 @@ export default function Home() {
 <section id="offers" className="bg-white py-16 px-4 sm:px-6 lg:px-8">
   <div className="max-w-7xl mx-auto text-center mb-14">
     <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C]">
-  ✨ Exclusive <span className="text-[#00AEEF]">Flight Deals</span> Just for You
-</h2>
-
-    <p className="mt-2 text-base sm:text-lg text-[#005f5f]">
+      Curated Flight <span className="text-[#00AEEF]">Offers</span> for You
+    </h2>
+    <p className="mt-2 text-base sm:text-lg text-[#005f5f] leading-snug">
       Premium destinations at unbeatable rates — limited time only.
     </p>
   </div>
 
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-    {/* 🌆 London */}
-    <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-2xl p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
-      <Image src="/london.jpg" alt="London" width={400} height={250} className="rounded-lg mb-5" />
+    {/* London */}
+    <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-lg p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
+      <Image src="/london.jpg" alt="London" width={400} height={250} className="rounded-md mb-5" />
       <h3 className="text-xl font-bold text-[#003C3C] mb-1">Lagos → London</h3>
       <p className="text-sm text-[#007c91] mb-1">British Airways • Economy</p>
-      <p className="text-sm font-medium text-[#003C3C] mb-1">From NGN 450,000</p>
-      <p className="text-xs text-gray-500 mb-4">Valid till Aug 30</p>
+      <p className="text-sm font-bold text-[#003C3C] mb-1">From NGN 450,000</p>
+      <p className="text-xs text-gray-500 mb-2">Valid till Aug 30</p>
       <button
         onClick={handleBookClick}
-        className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-medium text-sm hover:bg-[#008CC2] transition-all"
+        className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-semibold text-base hover:bg-[#008CC2] transition-all"
       >
-        <span className="inline-flex items-center justify-center gap-2">
-          Book Now <span className="animate-swing"></span>
-        </span>
+        Book Now
       </button>
     </div>
 
-    {/* 🗽 New York */}
-    <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-2xl p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
-      <Image src="/usa.jpg" alt="New York" width={400} height={250} className="rounded-lg mb-5" />
+    {/* New York */}
+    <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-lg p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
+      <Image src="/usa.jpg" alt="New York" width={400} height={250} className="rounded-md mb-5" />
       <h3 className="text-xl font-bold text-[#003C3C] mb-1">Lagos → New York</h3>
       <p className="text-sm text-[#007c91] mb-1">Delta Airlines • Economy</p>
-      <p className="text-sm font-medium text-[#003C3C] mb-1">From NGN 600,000</p>
-      <p className="text-xs text-gray-500 mb-4">Valid till Sept 10</p>
+      <p className="text-sm font-bold text-[#003C3C] mb-1">From NGN 600,000</p>
+      <p className="text-xs text-gray-500 mb-2">Valid till Sept 10</p>
       <button
         onClick={handleBookClick}
-        className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-medium text-sm hover:bg-[#008CC2] transition-all"
+        className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-semibold text-base hover:bg-[#008CC2] transition-all"
       >
-        <span className="inline-flex items-center justify-center gap-2">
-          Book Now <span className="animate-swing"></span>
-        </span>
+        Book Now
       </button>
     </div>
 
-    {/* 🕌 Dubai */}
-    <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-2xl p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
-      <Image src="/dubai.jpg" alt="Dubai" width={400} height={250} className="rounded-lg mb-5" />
+    {/* Dubai */}
+    <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-lg p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
+      <Image src="/dubai.jpg" alt="Dubai" width={400} height={250} className="rounded-md mb-5" />
       <h3 className="text-xl font-bold text-[#003C3C] mb-1">Lagos → Dubai</h3>
       <p className="text-sm text-[#007c91] mb-1">Emirates • Economy</p>
-      <p className="text-sm font-medium text-[#003C3C] mb-1">From NGN 300,000</p>
-      <p className="text-xs text-gray-500 mb-4">Valid till Sept 5</p>
+      <p className="text-sm font-bold text-[#003C3C] mb-1">From NGN 300,000</p>
+      <p className="text-xs text-gray-500 mb-2">Valid till Sept 5</p>
       <button
         onClick={handleBookClick}
-        className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-medium text-sm hover:bg-[#008CC2] transition-all"
+        className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-semibold text-base hover:bg-[#008CC2] transition-all"
       >
-        <span className="inline-flex items-center justify-center gap-2">
-          Book Now <span className="animate-swing"></span>
-        </span>
+        Book Now
       </button>
     </div>
 
-    {/* 🗼 Paris */}
-    <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-2xl p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
-      <Image src="/paris.jpg" alt="Paris" width={400} height={250} className="rounded-lg mb-5" />
+    {/* Paris */}
+    <div className="bg-white/70 backdrop-blur-md ring-1 ring-[#00AEEF]/10 rounded-lg p-6 shadow-lg hover:-translate-y-1 hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300">
+      <Image src="/paris.jpg" alt="Paris" width={400} height={250} className="rounded-md mb-5" />
       <h3 className="text-xl font-bold text-[#003C3C] mb-1">Lagos → Paris</h3>
       <p className="text-sm text-[#007c91] mb-1">Air France • Economy</p>
-      <p className="text-sm font-medium text-[#003C3C] mb-1">From NGN 520,000</p>
-      <p className="text-xs text-gray-500 mb-4">Valid till Aug 25</p>
+      <p className="text-sm font-bold text-[#003C3C] mb-1">From NGN 520,000</p>
+      <p className="text-xs text-gray-500 mb-2">Valid till Aug 25</p>
       <button
         onClick={handleBookClick}
-        className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-medium text-sm hover:bg-[#008CC2] transition-all"
+        className="bg-[#00AEEF] text-white w-full py-2.5 rounded-lg font-semibold text-base hover:bg-[#008CC2] transition-all"
       >
-        <span className="inline-flex items-center justify-center gap-2">
-          Book Now <span className="animate-swing"></span>
-        </span>
+        Book Now
       </button>
     </div>
   </div>
 </section>
+
 {/* ===== End of Premium Offers Section ===== */}
 {/* 
   ===============================
@@ -337,124 +329,67 @@ export default function Home() {
 <section id="reviews" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#E8FBFF] to-white">
   <div className="max-w-7xl mx-auto text-center mb-14">
     <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C]">
-  What Our <span className="text-[#00AEEF]">Travelers Are Saying</span>
-</h2>
-
-    <p className="mt-2 text-base sm:text-lg text-[#005f5f]">
+      What Our <span className="text-[#00AEEF]">Travelers Are Saying</span>
+    </h2>
+    <p className="mt-2 text-base sm:text-lg text-[#005f5f] leading-snug max-w-2xl mx-auto">
       Real reviews from smart explorers who booked with Flyawoof.
     </p>
   </div>
 
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    {/* ✨ Testimonial 1 - Angela */}
-    <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 ring-1 ring-[#00AEEF1A] shadow-xl hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300 animate-fadeUp">
-      <div className="mb-4">
+    {/* Testimonial 1 */}
+    <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 ring-1 ring-[#00AEEF1A]">
+      <div className="mb-2 flex justify-center">
         <Image
           src="/angela.jpg"
           alt="Angela"
           width={56}
           height={56}
-          className="w-14 h-14 rounded-full object-cover ring-2 ring-[#00AEEF]/30"
+          className="w-14 h-14 rounded-full object-cover ring-2 ring-[#00AEEF]/50"
         />
       </div>
-      <p className="text-sm text-[#003C3C] italic mb-3">
+      <p className="text-sm text-[#003C3C] italic mb-2">
         “Booking my honeymoon flight to London was a breeze. Super affordable and zero stress!”
       </p>
-      <p className="text-sm text-[#005f5f] font-semibold">— Angela B., Lagos</p>
+      <p className="mt-2 text-sm font-semibold text-[#002828]">— Angela B., Lagos</p>
     </div>
 
-    {/* ✨ Testimonial 2 - Daniel */}
-    <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 ring-1 ring-[#00AEEF1A] shadow-xl hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300 animate-fadeUp delay-100">
-      <div className="mb-4">
+    {/* Testimonial 2 */}
+    <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 ring-1 ring-[#00AEEF1A]">
+      <div className="mb-2 flex justify-center">
         <Image
           src="/daniel.jpg"
           alt="Daniel"
           width={56}
           height={56}
-          className="w-14 h-14 rounded-full object-cover ring-2 ring-[#00AEEF]/30"
+          className="w-14 h-14 rounded-full object-cover ring-2 ring-[#00AEEF]/50"
         />
       </div>
-      <p className="text-sm text-[#003C3C] italic mb-3">
+      <p className="text-sm text-[#003C3C] italic mb-2">
         “This is way better than all those bulky travel sites. It’s clean, fast, and does the job right.”
       </p>
-      <p className="text-sm text-[#005f5f] font-semibold">— Daniel T., Abuja</p>
+      <p className="mt-2 text-sm font-semibold text-[#002828]">— Daniel T., Abuja</p>
     </div>
 
-    {/* ✨ Testimonial 3 - Chika */}
-    <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 ring-1 ring-[#00AEEF1A] shadow-xl hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300 animate-fadeUp delay-200">
-      <div className="mb-4">
+    {/* Testimonial 3 */}
+    <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 ring-1 ring-[#00AEEF1A]">
+      <div className="mb-2 flex justify-center">
         <Image
           src="/chika.jpg"
           alt="Chika"
           width={56}
           height={56}
-          className="w-14 h-14 rounded-full object-cover ring-2 ring-[#00AEEF]/30"
+          className="w-14 h-14 rounded-full object-cover ring-2 ring-[#00AEEF]/50"
         />
       </div>
-      <p className="text-sm text-[#003C3C] italic mb-3">
+      <p className="text-sm text-[#003C3C] italic mb-2">
         “I booked my Dubai getaway on Flyawoof in less than 2 minutes. It’s so smooth, I swear.”
       </p>
-      <p className="text-sm text-[#005f5f] font-semibold">— Chika O., Enugu</p>
+      <p className="mt-2 text-sm font-semibold text-[#002828]">— Chika O., Enugu</p>
     </div>
   </div>
 </section>
-{/* ===== End of Testimonial Section ===== */}
-{/* 
-  ===============================
-  💎 Why Choose Flyawoof Section
-  With custom icons and WhatsApp delivery
-  ===============================
-*/}
-<section id="why" className="bg-[#F9FEFF] py-20 px-4 sm:px-6 lg:px-8">
-  <div className="max-w-7xl mx-auto text-center mb-14">
-    <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C]">
-  Why Choose <span className="text-[#00AEEF]">Flyawoof</span>?
-</h2>
 
-    <p className="mt-2 text-base sm:text-lg text-[#005f5f]">
-      Not just booking — this is smarter, faster, friendlier travel.
-    </p>
-  </div>
-
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-left max-w-6xl mx-auto">
-    {/* 📩 WhatsApp Ticket Delivery */}
-    <div className="bg-white/80 backdrop-blur-md p-6 rounded-xl shadow-md ring-1 ring-[#00AEEF1A] hover:shadow-lg transition-all animate-fadeUp">
-      <div className="mb-4">
-        <svg fill="#25D366" viewBox="0 0 32 32" className="w-10 h-10"><path d="M27.546 4.454c-5.92-5.92-15.529-5.92-21.449 0-4.037 4.036-5.27 9.905-3.646 15.05l-2.346 8.543 8.735-2.29a15.446 15.446 0 0012.132-4.444c5.92-5.92 5.92-15.53 0-21.45zm-1.606 19.843a13.154 13.154 0 01-11.056 3.741l-.392-.083-5.171 1.356 1.416-5.095-.127-.385a13.147 13.147 0 0119.479-15.918 13.155 13.155 0 01-4.149 16.384zm-5.495-6.273c-.236-.117-1.392-.685-1.608-.763-.216-.079-.373-.117-.53.117s-.608.763-.745.923c-.137.157-.274.177-.51.059s-.991-.364-1.889-1.16c-.698-.621-1.17-1.39-1.306-1.624-.137-.235-.015-.362.103-.48.106-.106.236-.275.354-.412.118-.137.157-.236.236-.393.079-.157.04-.294-.02-.412-.06-.118-.53-1.27-.726-1.743-.191-.457-.385-.396-.53-.404l-.451-.007c-.157 0-.412.06-.627.295-.216.236-.824.803-.824 1.955 0 1.151.843 2.263.961 2.421.118.157 1.657 2.53 4.02 3.546.562.242 1 .387 1.34.497.562.178 1.073.153 1.477.093.45-.068 1.392-.566 1.588-1.112.196-.547.196-1.014.137-1.112-.059-.098-.216-.157-.45-.275z"/></svg>
-      </div>
-      <h3 className="text-xl font-semibold text-[#003C3C] mb-2">Ticket via WhatsApp</h3>
-      <p className="text-sm text-[#005f5f]">
-        Just enter your WhatsApp number when booking — we’ll send your e-ticket straight to your inbox on WhatsApp, instantly and securely.
-      </p>
-    </div>
-
-    {/* ⚡ Instant Confirmation */}
-    <div className="bg-white/80 backdrop-blur-md p-6 rounded-xl shadow-md ring-1 ring-[#00AEEF1A] hover:shadow-lg transition-all animate-fadeUp delay-100">
-      <div className="mb-4">
-        <svg fill="#00AEEF" viewBox="0 0 24 24" className="w-8 h-8">
-          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-        </svg>
-      </div>
-      <h3 className="text-xl font-semibold text-[#003C3C] mb-2">Fast Booking</h3>
-      <p className="text-sm text-[#005f5f]">
-        Skip the stress. Your booking confirms instantly, no queue, no callback, no drama.
-      </p>
-    </div>
-
-    {/* 💰 Smart Fare Deals */}
-    <div className="bg-white/80 backdrop-blur-md p-6 rounded-xl shadow-md ring-1 ring-[#00AEEF1A] hover:shadow-lg transition-all animate-fadeUp delay-200">
-      <div className="mb-4">
-        <svg fill="#00AEEF" viewBox="0 0 24 24" className="w-8 h-8">
-          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zM12 13h4v2h-4v3l-4-4 4-4v3z"/>
-        </svg>
-      </div>
-      <h3 className="text-xl font-semibold text-[#003C3C] mb-2">Curated Deals</h3>
-      <p className="text-sm text-[#005f5f]">
-        We filter out the noise — you only see flights that give top value for your budget and time.
-      </p>
-    </div>
-  </div>
-</section>
 {/* 
   ===============================
   ✈️ How to Book a Flight Section
