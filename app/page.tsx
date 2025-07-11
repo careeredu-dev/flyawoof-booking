@@ -398,16 +398,15 @@ export default function Home() {
 */}
 <section id="how-to-book" className="bg-gradient-to-b from-[#F9FEFF] to-white py-20 px-4 sm:px-6 lg:px-8">
   <div className="max-w-7xl mx-auto text-center mb-16">
-   <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C]">
-  How to Book a Flight with <span className="text-[#00AEEF]">Flyawoof</span>
-</h2>
-
-    <p className="mt-2 text-base sm:text-lg text-[#005f5f]">
+    <h2 className="text-3xl sm:text-4xl font-extrabold text-[#003C3C] leading-tight">
+      How to Book a Flight with <span className="text-[#00AEEF]">Flyawoof</span>
+    </h2>
+    <p className="mt-2 text-base sm:text-lg text-[#005f5f] max-w-xl mx-auto">
       Just 6 easy steps to secure your next destination — fast, safe, seamless.
     </p>
   </div>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
     {[
       {
         icon: "🌍",
@@ -442,9 +441,11 @@ export default function Home() {
     ].map((step, i) => (
       <div
         key={i}
-        className={`bg-white/70 backdrop-blur-md rounded-xl p-6 shadow-lg ring-1 ring-[#00AEEF]/10 hover:shadow-[0_10px_40px_#00AEEF33] transform transition-all duration-300 animate-fadeUp delay-${i * 100}`}
+        className={`bg-white/80 backdrop-blur-md rounded-xl p-6 shadow-lg ring-1 ring-[#00AEEF1A] hover:shadow-[0_10px_40px_#00AEEF33] transition-all duration-300 animate-fadeUp delay-${i * 100}`}
       >
-        <div className="text-3xl mb-4">{step.icon}</div>
+        <div className="mb-3">
+          <span className="inline-block text-2xl align-middle">{step.icon}</span>
+        </div>
         <h3 className="text-lg font-semibold text-[#003C3C] mb-2">{i + 1}. {step.title}</h3>
         <p className="text-sm text-[#005f5f]">{step.desc}</p>
       </div>
