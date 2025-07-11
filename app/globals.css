@@ -204,3 +204,71 @@ a:hover::after {
   0%, 100% { box-shadow: 0 0 0 rgba(0,174,239,0.3); }
   50% { box-shadow: 0 0 10px rgba(0,174,239,0.7); }
 }
+@keyframes imageSlide1 {
+  0%   { transform: translateY(40px); opacity: 0; }
+  10%  { transform: translateY(0); opacity: 1; }
+  40%  { opacity: 1; }
+  49%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes imageSlide2 {
+  0%   { opacity: 0; }
+  50%  { transform: translateY(40px); opacity: 0; }
+  55%  { transform: translateY(0); opacity: 1; }
+  85%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.animate-loop1 {
+  animation: imageSlide1 6s ease-in-out infinite;
+  position: absolute;
+  z-index: 2;
+}
+
+.animate-loop2 {
+  animation: imageSlide2 6s ease-in-out infinite;
+  position: absolute;
+  z-index: 1;
+}
+@keyframes textPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.animate-pulseText {
+  animation: textPulse 2s ease-in-out infinite;
+}
+@keyframes waveFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+.animate-waveFloat {
+  animation: waveFloat 10s ease-in-out infinite;
+}
+@keyframes waveFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+.animate-waveFloat {
+  animation: waveFloat 10s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px #00AEEF50;
+  }
+  50% {
+    box-shadow: 0 0 40px #00FFD150;
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}

@@ -13,7 +13,7 @@ export default function Header() {
           <Image
             src="/logo.png"
             alt="Flyawoof Logo"
-            width={160}
+            width={240}
             height={40}
             priority
           />
