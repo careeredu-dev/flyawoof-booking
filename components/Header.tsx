@@ -7,7 +7,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-[#003C3C] shadow-sm z-30 transition-all font-[Geist] text-white">
+    <header className="fixed top-0 left-0 w-full bg-[#003C3C] shadow-sm z-30 font-[Geist] text-white">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 h-16 sm:h-20">
         <Link href="/" className="flex items-center">
           <Image
@@ -48,17 +48,41 @@ export default function Header() {
         </Link>
 
         {/* 📱 Mobile Menu Toggle */}
-        <div
-          className="md:hidden text-white text-3xl font-bold cursor-pointer"
+        <button
+          className="md:hidden text-white text-3xl font-bold cursor-pointer transition-transform duration-300"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle mobile menu"
         >
-          ☰
-        </div>
+          {mobileMenuOpen ? (
+            <span className="text-3xl">
+              <i className="ri-close-line" />
+            </span>
+          ) : (
+            <span className="text-3xl">
+              <i className="ri-menu-line" />
+            </span>
+          )}
+        </button>
       </div>
 
-      {/* 📱 Mobile Nav Panel */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-[#003C3C] border-t border-[#005F5F] shadow-md z-[60] animate-fadeIn">
+      {/* 🌫️ Mobile Menu Overlay and Panel */}
+      <div
+        className={`md:hidden fixed inset-0 z-40 transition-opacity duration-500 ease-out ${
+          mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {/* Glassy dark overlay */}
+        <div
+          className="absolute inset-0 bg-black/50 backdrop-blur-md z-30"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+
+        {/* 📱 Mobile Nav Panel */}
+        <div
+          className={`absolute top-0 left-0 w-full bg-[#003C3C] border-t border-[#005F5F] shadow-lg z-40 transform transition-transform duration-500 ease-out ${
+            mobileMenuOpen ? "translate-y-0" : "-translate-y-10"
+          }`}
+        >
           <nav className="flex flex-col px-6 py-4 space-y-4 text-white font-medium text-base tracking-wide">
             <a href="/" onClick={() => setMobileMenuOpen(false)}>Home</a>
             <a href="#offers" onClick={() => setMobileMenuOpen(false)}>Offers</a>
@@ -66,9 +90,11 @@ export default function Header() {
             <a href="#reviews" onClick={() => setMobileMenuOpen(false)}>Reviews</a>
             <a href="#download" onClick={() => setMobileMenuOpen(false)}>Download Our Mobile App</a>
             <a href="https://wa.link/vdw17y" onClick={() => setMobileMenuOpen(false)}>Contact Us</a>
+            {/* 🧘🏽 Soft Bottom Padding */}
+            <div className="pt-4 pb-6" />
           </nav>
         </div>
-      )}
+      </div>
     </header>
   );
 }
