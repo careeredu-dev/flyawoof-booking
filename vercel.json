@@ -3,7 +3,14 @@
     {
       "source": "/(.*)",
       "destination": "https://flyawoof.com/$1",
-      "permanent": true
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ]
     }
   ]
 }
